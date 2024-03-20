@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.slowstep_pjt.SlowstepPjtApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-03-20T04:44:46" hostname="DESKTOP-ODLC1MT" time="1.218">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.example.slowstep_pjt.SlowstepPjtApplicationTests" time="1.218"/>
+  <system-out><![CDATA[13:44:39.779 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.slowstep_pjt.SlowstepPjtApplicationTests]: SlowstepPjtApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:44:39.950 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.slowstep_pjt.SlowstepPjtApplication for test class com.example.slowstep_pjt.SlowstepPjtApplicationTests
+13:44:40,623 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [console]
+13:44:40,624 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+13:44:40,629 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+13:44:40,648 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [console-infolog] not referenced. Skipping further processing.
+13:44:40,648 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.example.encore_spring_pjt] to DEBUG
+13:44:40,649 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@260f2144 - Propagating DEBUG level on Logger[com.example.encore_spring_pjt] onto the JUL framework
+13:44:40,649 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.sqlonly] to INFO
+13:44:40,650 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@260f2144 - Propagating INFO level on Logger[jdbc.sqlonly] onto the JUL framework
+13:44:40,650 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.sqltiming] to DEBUG
+13:44:40,650 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@260f2144 - Propagating DEBUG level on Logger[jdbc.sqltiming] onto the JUL framework
+13:44:40,650 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.resultsettable] to INFO
+13:44:40,650 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@260f2144 - Propagating INFO level on Logger[jdbc.resultsettable] onto the JUL framework
+13:44:40,651 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to OFF
+13:44:40,651 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@260f2144 - Propagating OFF level on Logger[ROOT] onto the JUL framework
+13:44:40,651 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [console] to Logger[ROOT]
+13:44:40,651 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@46d8f407 - End of configuration.
+13:44:40,652 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@17814b1c - Registering current configuration as safe fallback point
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::      (v3.1.10-SNAPSHOT)
+
+2024-03-20 13:44:42,998  INFO [jdbc.sqlonly] SELECT NOW() FROM DUAL ;
+
+2024-03-20 13:44:43,016 DEBUG [jdbc.sqltiming]  com.zaxxer.hikari.pool.PoolBase.executeSql(PoolBase.java:578)
+1. SELECT NOW() FROM DUAL ;
+ {executed in 15 msec}
+2024-03-20 13:44:44,008  INFO [jdbc.sqlonly] SELECT NOW() FROM DUAL ;
+
+2024-03-20 13:44:44,011 DEBUG [jdbc.sqltiming]  com.zaxxer.hikari.pool.PoolBase.isConnectionDead(PoolBase.java:164)
+1. SELECT NOW() FROM DUAL ;
+ {executed in 2 msec}
+2024-03-20 13:44:44,077  INFO [jdbc.sqlonly] SELECT @@character_set_database, @@sql_mode
+
+2024-03-20 13:44:44,078 DEBUG [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:110)
+1. SELECT @@character_set_database, @@sql_mode
+ {executed in 1 msec}
+>>> debug
+org.mybatis.spring.SqlSessionTemplate@3278d065
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
