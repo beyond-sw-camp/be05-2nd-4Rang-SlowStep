@@ -3,6 +3,7 @@
 
 <mapper namespace = "com.example.slowstep_pjt.managePatient.mapper.MPAllMapper">
 
+
     <select id="getHealthInfo"
         parameterType="java.lang.Integer"
         resultType="com.example.slowstep_pjt.managePatient.domain.PT_HTH_INFO_DTO">
@@ -11,6 +12,7 @@
         FROM PT_HTH_INFO
         
     </select>
+
 
 
 </mapper>

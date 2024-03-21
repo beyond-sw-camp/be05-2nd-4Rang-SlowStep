@@ -1,5 +1,6 @@
 package com.example.slowstep_pjt.managePatient.service;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,4 +22,5 @@ public class MPAllService {
         return mpAllMapper.getHealthInfo(ptNo);
     }
     
+
 }

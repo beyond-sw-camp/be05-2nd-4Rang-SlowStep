@@ -11,4 +11,6 @@ public class AD_DRUG_INFO_DTO { // 복용 약물 정보 테이블
     private String drugNm;  // 약물명
     private String drugAdFreq;  // 약물 복용 주기
 
+
 }
+
