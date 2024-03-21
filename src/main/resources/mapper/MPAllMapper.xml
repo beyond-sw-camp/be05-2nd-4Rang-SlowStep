@@ -14,6 +14,16 @@
         
     </select>
 
+    <select id="getPtInfo"
+            parameterType="java.lang.Integer"
+            resultType="com.example.slowstep_pjt.managePatient.domain.PT_DTO">
+
+        SELECT *
+        FROM PT
+        WHERE PT_NO = #{ptNo}
+
+    </select>
+
 
 
 </mapper>
