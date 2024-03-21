@@ -1,5 +1,6 @@
 package com.example.slowstep_pjt.managePatient.ctrl;
 
+import com.example.slowstep_pjt.managePatient.domain.PT_DTO;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.slowstep_pjt.managePatient.domain.PT_HTH_INFO_DTO;
@@ -28,6 +29,14 @@ public class MPAllController {
         System.out.println("debug >> AllController getHealthInfo");
 
         return new ResponseEntity<>(mpAllService.getHealthInfo(ptNo), HttpStatus.OK);
+    }
+
+    @GetMapping("/pt/{ptNo}")
+    public ResponseEntity<List<PT_DTO>> getPtInfo(@PathVariable("ptNo") Integer ptNo) {
+
+        System.out.println("debug >> AllController getPtInfo");
+
+        return new ResponseEntity<>(mpAllService.getPtInfo(ptNo), HttpStatus.OK);
     }
     
 }

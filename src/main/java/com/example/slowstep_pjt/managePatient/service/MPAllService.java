@@ -3,6 +3,7 @@ package com.example.slowstep_pjt.managePatient.service;
 
 import java.util.List;
 
+import com.example.slowstep_pjt.managePatient.domain.PT_DTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,13 @@ public class MPAllService {
         System.out.println("debug >> Service getHealthInfo()");
 
         return mpAllMapper.getHealthInfo(ptNo);
+    }
+
+    public List<PT_DTO> getPtInfo(Integer ptNo){
+
+        System.out.println("debug >> Service getPtInfo()");
+
+        return mpAllMapper.getPtInfo(ptNo);
     }
     
 
