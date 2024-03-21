@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.example.slowstep_pjt.managePatient.mapper.MPAllMapper">
+
+
+    <select id="getHealthInfo"
+        parameterType="java.lang.Integer"
+        resultType="com.example.slowstep_pjt.managePatient.domain.PT_HTH_INFO_DTO">
+
+        SELECT *
+        FROM PT_HTH_INFO
+        WHERE PT_NO = #{ptNo}
+        
+    </select>
+
+    <select id="getPtInfo"
+            parameterType="java.lang.Integer"
+            resultType="com.example.slowstep_pjt.managePatient.domain.PT_DTO">
+
+        SELECT *
+        FROM PT
+        WHERE PT_NO = #{ptNo}
+
+    </select>
+
+
+
+</mapper>
