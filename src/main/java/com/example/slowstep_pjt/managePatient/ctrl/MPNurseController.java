@@ -4,17 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.slowstep_pjt.managePatient.service.MPDoctorService;
-
+import com.example.slowstep_pjt.managePatient.service.MPNurseService;
 
 @RestController
-@RequestMapping("/doctor")
-public class MPDoctorController {
+@RequestMapping("/nurse")
+public class MPNurseController {
 
     @Autowired
-    private MPDoctorService mpDoctorService;
-
+    private MPNurseService mpNurseService;
     
-    
-
 }
