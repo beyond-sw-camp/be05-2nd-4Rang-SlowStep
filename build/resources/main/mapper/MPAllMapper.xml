@@ -9,6 +9,7 @@
 
         SELECT *
         FROM PT_HTH_INFO
+        WHERE PT_NO = #{ptNo}
         
     </select>
 
