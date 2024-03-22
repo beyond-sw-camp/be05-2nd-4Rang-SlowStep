@@ -3,6 +3,7 @@
 
 <mapper namespace = "com.example.slowstep_pjt.managePatient.mapper.MPAllMapper">
 
+
     <select id="getHealthInfo"
         parameterType="java.lang.Integer"
         resultType="com.example.slowstep_pjt.managePatient.domain.PT_HTH_INFO_DTO">
@@ -12,6 +13,45 @@
         WHERE PT_NO = #{ptNo}
         
     </select>
+
+    <insert id="postHealthInfo"
+        parameterType="com.example.slowstep_pjt.managePatient.domain.PT_HTH_INFO_DTO">
+
+        INSERT INTO PT_HTH_INFO
+        VALUES( default,#{ptNo}, #{ptBp}, #{ptBst}, #{ptWt}, #{ptHr}, NOW() )
+
+    </insert>
+
+    <select id="getExamInfo"
+        parameterType="java.lang.Integer"
+        resultType="com.example.slowstep_pjt.managePatient.domain.EXAM_INFO">
+
+        SELECT *
+        FROM EXAM_INFO
+        WHERE PT_NO = #{ptNo}
+
+    </select>
+
+    <select id="getExamInfoDetail"
+        parameterType="java.lang.Integer"
+        resultType="com.example.slowstep_pjt.managePatient.domain.EXAM_INFO">
+
+        SELECT *
+        FROM EXAM_INFO
+        WHERE PT_NO = #{ptNo} AND EXAM_NO = #{examNo}
+
+    </select>
+
+    <select id="getPtInfo"
+            parameterType="java.lang.Integer"
+            resultType="com.example.slowstep_pjt.managePatient.domain.PT_DTO">
+
+        SELECT *
+        FROM PT
+        WHERE PT_NO = #{ptNo}
+
+    </select>
+
 
 
 </mapper>
