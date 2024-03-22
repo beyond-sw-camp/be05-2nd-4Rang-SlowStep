@@ -23,6 +23,10 @@ public interface MPAllMapper {
 
     public EXAM_INFO getExamInfoDetail(@Param("ptNo")Integer ptNo, @Param("examNo")Integer examNo);
 
+    public void postExamInfo(EXAM_INFO postData);
+    
+    public List<EXAM_INFO> getDisInfo(Integer phNo);
+
     public List<PT_DTO> getPtInfo(Integer ptNo);
 
 }

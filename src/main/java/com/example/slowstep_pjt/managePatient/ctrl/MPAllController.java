@@ -8,6 +8,7 @@ import com.example.slowstep_pjt.managePatient.domain.PT_HTH_INFO_DTO;
 import com.example.slowstep_pjt.managePatient.service.MPAllService;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -62,6 +63,26 @@ public class MPAllController {
         
         return new ResponseEntity<EXAM_INFO>(mpAllService.getExamInfoDetail(ptNo, examNo), HttpStatus.OK);
     }
+
+    @PostMapping("/post_exam_info")
+    public ResponseEntity<String> postExamInfo(@RequestBody EXAM_INFO postData) {
+
+        System.out.println("debug >> AllController postExamInfo");
+
+        mpAllService.postExamInfo(postData);
+        
+        return new ResponseEntity<>("진료정보가 등록되었습니다.", HttpStatus.OK);
+    }
+    
+
+    @GetMapping("/getDisInfo/{ptNo}")
+    public ResponseEntity<Map<String, String>> getDisInfo(@PathVariable("ptNo") Integer ptNo) {
+
+        System.out.println("debug >> AllController getDisInfo/ptNo");
+
+        return new ResponseEntity<>(mpAllService.getDisInfo(ptNo), HttpStatus.OK);
+    }
+    
     
     @GetMapping("/pt/{ptNo}")
     public ResponseEntity<List<PT_DTO>> getPtInfo(@PathVariable("ptNo") Integer ptNo) {
