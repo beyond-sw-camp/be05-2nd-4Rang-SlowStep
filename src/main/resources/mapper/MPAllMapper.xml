@@ -18,7 +18,7 @@
         parameterType="com.example.slowstep_pjt.managePatient.domain.PT_HTH_INFO_DTO">
 
         INSERT INTO PT_HTH_INFO
-        VALUES( default,#{ptNo}, #{ptBp}, #{ptBst}, #{ptWt}, #{ptHr}, NOW() )
+        VALUES( default, #{ptNo}, #{ptBp}, #{ptBst}, #{ptWt}, #{ptHr}, NOW() )
 
     </insert>
 
@@ -41,6 +41,25 @@
         WHERE PT_NO = #{ptNo} AND EXAM_NO = #{examNo}
 
     </select>
+
+    <select id="getDisInfo"
+        parameterType="java.lang.Integer"
+        resultType="com.example.slowstep_pjt.managePatient.domain.EXAM_INFO">
+
+        SELECT DIS_NM, EXAM_YMD
+        FROM EXAM_INFO
+        WHERE PT_NO = #{ptNo}
+        ORDER BY EXAM_YMD DESC
+
+    </select>
+
+    <insert id="postExamInfo"
+        parameterType="com.example.slowstep_pjt.managePatient.domain.EXAM_INFO">
+
+        INSERT INTO EXAM_INFO
+        VALUES( default, #{ptNo}, #{rxCn}, #{disNm}, #{picMdNm}, NOW() )
+
+    </insert>
 
     <select id="getPtInfo"
             parameterType="java.lang.Integer"

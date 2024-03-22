@@ -1,7 +1,9 @@
 package com.example.slowstep_pjt.managePatient.service;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.example.slowstep_pjt.managePatient.domain.EXAM_INFO;
 import com.example.slowstep_pjt.managePatient.domain.PT_DTO;
@@ -45,14 +47,37 @@ public class MPAllService {
         return mpAllMapper.getExamInfoDetail(ptNo, examNo);
     }
 
+    public void postExamInfo(EXAM_INFO postData){
+
+        System.out.println("debug >> Service postExamInfo()");
+
+        mpAllMapper.postExamInfo(postData);
+
+    }
+
+    public Map<String, String> getDisInfo(Integer phNo){
+
+        System.out.println("debug >> Service getDisInfo()");
+
+        Map<String, String> disList = new HashMap<>();
+        List<EXAM_INFO> list = mpAllMapper.getDisInfo(phNo);
+
+        for(EXAM_INFO exam : list){
+
+            System.out.println(exam.getExamYmd().toString() + ", " + exam.getDisNm());
+            disList.put(exam.getExamYmd().toString(), exam.getDisNm());
+        }
+
+
+        return disList;
+    }
+
     public List<PT_DTO> getPtInfo(Integer ptNo){
 
         System.out.println("debug >> Service getPtInfo()");
 
         return mpAllMapper.getPtInfo(ptNo);
     }
-
-    
     
 
 }
