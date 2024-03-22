@@ -3,11 +3,12 @@
 
 <mapper namespace = "com.example.slowstep_pjt.pm.mapper.PmMapper">
 
-    <sql id="saveColumns">
+    <!-- <sql id="saveColumns">
         pm_rm_no    ,
         pm_cn       ,
-        trsm_dir
-    </sql>
+        trsm_dir    ,
+        trsm_dt
+    </sql> -->
 
     <sql id="selectColumns">
         pm_no       ,
@@ -16,18 +17,22 @@
         trsm_dir    ,
         rd_yn       ,
         pm_dsptch_dt,
-        delete_yn
+        delete_yn   ,
+        delete_dt   ,
+        rd_yn_dt    ,
+        trsm_dt
     </sql>
 
-    <update id="save"
+    <!-- <update id="save"
         parameterType="com.example.slowstep_pjt.pm.domain.PmRequest">
         INSERT INTO PM(
             <include refid="saveColumns" />
         )
         VALUES( #{pmRmNo},
                 #{pmCn},    
-                #{trsmDir})
-    </update>
+                #{trsmDir},
+                NOW())
+    </update> -->
 
     <select id="findAll"
         parameterType="java.lang.Integer"

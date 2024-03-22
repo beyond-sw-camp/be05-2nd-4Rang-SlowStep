@@ -17,12 +17,12 @@ public class PmServiceImpl implements PmService {
 
     private final PmMapper      pmMapper    ;
 
-    @Transactional
-    @Override
-    public void savePm(PmRequest params) {
-        System.out.println("debug >>> service savePm ");
-        pmMapper.save(params); 
-    }
+    // @Transactional
+    // @Override
+    // public void savePm(PmRequest params) {
+    //     System.out.println("debug >>> service savePm ");
+    //     pmMapper.save(params); 
+    // }
 
     @Transactional
     @Override

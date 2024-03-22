@@ -3,6 +3,8 @@ package com.example.slowstep_pjt.pm.ctrl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,7 +28,7 @@ public class PmController {
     private PmService   pmService   ;
 
     @GetMapping("/view.slowstep")
-    public String view(PmRmRequest params, Model model){
+    public ResponseEntity<List<PmResponse>> view(PmRmRequest params, Model model){
         // 디버깅을 위한 더미값 할당
         params.setMdNo(1);
         params.setRnNo(3);
@@ -37,36 +39,36 @@ public class PmController {
         for(PmResponse response:lst){
             System.out.println(response.toString());
         }
-        return "viewpm";
+        return new ResponseEntity<>(lst, HttpStatus.OK);
     }
 
-    @PostMapping("/save.slowstep")
-    public String save(PmRequest params, Model model){
-        // 디버깅을 위한 더미값 할당
-        params.setPmRmNo(2);
-        params.setPmCn("test");
-        params.setTrsmDir(1);
-        System.out.println("debug >>> Post params.toString() , "+params.toString());
-        System.out.println("debug >>> Get Path /pmrm/save.slowstep");
-        pmService.savePm(params);
-        return "save";
-    }
+    // @PostMapping("/save.slowstep")
+    // public String save(PmRequest params, Model model){
+    //     // 디버깅을 위한 더미값 할당
+    //     params.setPmRmNo(2);
+    //     params.setPmCn("test");
+    //     params.setTrsmDir(1);
+    //     System.out.println("debug >>> Post params.toString() , "+params.toString());
+    //     System.out.println("debug >>> Get Path /pmrm/save.slowstep");
+    //     pmService.savePm(params);
+    //     return "save";
+    // }
 
     @DeleteMapping("/delete.slowstep")
-    public String delete(PmRequest params, Model model){
+    public ResponseEntity<String> delete(PmRequest params, Model model){
         // 디버깅을 위한 더미값 할당
-        params.setPmNo(5);
+        params.setPmNo(7);
 
         Integer targetIdx=params.getPmNo();
         System.out.println("debug >>> Post params.toString() , "+params.toString());
         System.out.println("debug >>> Delete Path /pmrm/delete.slowstep");
         pmService.deletePmByNo(targetIdx);
 
-        return "redirect:/pmrm/viewpm.slowstep";
+        return new ResponseEntity<>(targetIdx+"번 쪽지 삭제 완료(DELETE_YN Chaged)", HttpStatus.OK);
     }
 
     @GetMapping("/getDetailByPmNo.slowstep")
-    public String getDetailByPmNo(PmRequest params, Model model) {
+    public ResponseEntity<PmResponse> getDetailByPmNo(PmRequest params, Model model) {
         // 디버깅을 위한 더미값 할당
         params.setPmNo(1);
 
@@ -74,7 +76,6 @@ public class PmController {
         PmResponse  response    = pmService.getDetailByPmNo(targetIdx);
         System.out.println("debug >>> Get params.toString() , "+response.toString());
         System.out.println("debug >>> Get Path /pmrm/getDetailByPmNo.slowstep");
-        return "showDetail.slowstep";
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
-    
 }

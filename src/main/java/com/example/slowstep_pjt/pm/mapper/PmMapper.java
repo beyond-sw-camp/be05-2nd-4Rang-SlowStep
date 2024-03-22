@@ -9,7 +9,7 @@ import com.example.slowstep_pjt.pm.domain.PmResponse;
 
 @Mapper
 public interface PmMapper {
-    public  void                save(PmRequest params)      ;
+    // public  void                save(PmRequest params)      ;
     public  void                deleteByPmNo(Integer pmNo)  ;
     public  List<PmResponse>    findAll(Integer pmRmNo)     ;
     public  PmResponse          findByPmNo(Integer pmNo)    ;
