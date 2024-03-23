@@ -3,6 +3,12 @@
 
 <mapper namespace = "com.example.slowstep_pjt.managePatient.mapper.MPDoctorMapper">
 
-    
+    <insert id="postExamInfo"
+            parameterType="com.example.slowstep_pjt.managePatient.domain.EXAM_INFO">
+
+        INSERT INTO EXAM_INFO
+        VALUES( default, #{ptNo}, #{rxCn}, #{disNm}, #{picMdNm}, NOW() )
+
+    </insert>
 
 </mapper>

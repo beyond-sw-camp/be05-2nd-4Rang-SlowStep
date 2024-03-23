@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.example.slowstep_pjt.managePatient.domain.AD_DRUG_INFO_DTO;
 import com.example.slowstep_pjt.managePatient.domain.EXAM_INFO;
 import com.example.slowstep_pjt.managePatient.domain.PT_DTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,14 +48,6 @@ public class MPAllService {
         return mpAllMapper.getExamInfoDetail(ptNo, examNo);
     }
 
-    public void postExamInfo(EXAM_INFO postData){
-
-        System.out.println("debug >> Service postExamInfo()");
-
-        mpAllMapper.postExamInfo(postData);
-
-    }
-
     public Map<String, String> getDisInfo(Integer phNo){
 
         System.out.println("debug >> Service getDisInfo()");
@@ -77,6 +70,21 @@ public class MPAllService {
         System.out.println("debug >> Service getPtInfo()");
 
         return mpAllMapper.getPtInfo(ptNo);
+    }
+
+    public List<AD_DRUG_INFO_DTO> getDrugInfo(){
+
+        System.out.println("debug >> Service getDrugInfo()");
+
+        return mpAllMapper.getDrugInfo();
+    }
+
+    public void postDrugInfo(AD_DRUG_INFO_DTO drugData){
+
+        System.out.println("debug >> Service postDrugInfo()");
+
+        mpAllMapper.postDrugInfo(drugData);
+
     }
     
 
