@@ -1,5 +1,6 @@
 package com.example.slowstep_pjt.managePatient.ctrl;
 
+import com.example.slowstep_pjt.managePatient.domain.AD_DRUG_INFO_DTO;
 import com.example.slowstep_pjt.managePatient.domain.EXAM_INFO;
 import com.example.slowstep_pjt.managePatient.domain.PT_DTO;
 import org.springframework.web.bind.annotation.RestController;
@@ -64,16 +65,6 @@ public class MPAllController {
         return new ResponseEntity<EXAM_INFO>(mpAllService.getExamInfoDetail(ptNo, examNo), HttpStatus.OK);
     }
 
-    @PostMapping("/post_exam_info")
-    public ResponseEntity<String> postExamInfo(@RequestBody EXAM_INFO postData) {
-
-        System.out.println("debug >> AllController postExamInfo");
-
-        mpAllService.postExamInfo(postData);
-        
-        return new ResponseEntity<>("진료정보가 등록되었습니다.", HttpStatus.OK);
-    }
-    
 
     @GetMapping("/getDisInfo/{ptNo}")
     public ResponseEntity<Map<String, String>> getDisInfo(@PathVariable("ptNo") Integer ptNo) {
@@ -90,6 +81,24 @@ public class MPAllController {
         System.out.println("debug >> AllController getPtInfo");
 
         return new ResponseEntity<>(mpAllService.getPtInfo(ptNo), HttpStatus.OK);
+    }
+
+    @GetMapping("/ad_drug_info")
+    public ResponseEntity<List<AD_DRUG_INFO_DTO>> getDrugInfo() {
+
+        System.out.println("debug >> AllController getPtInfo");
+
+        return new ResponseEntity<>(mpAllService.getDrugInfo(), HttpStatus.OK);
+    }
+
+    @PostMapping("/post_ad_drug_info")
+    public ResponseEntity<String> postDrugInfo(@RequestBody AD_DRUG_INFO_DTO drugData) {
+
+        System.out.println("debug >> MPDoctorController postExamInfo");
+
+        mpAllService.postDrugInfo(drugData);
+
+        return new ResponseEntity<>("복용 약물 정보가 등록되었습니다.", HttpStatus.OK);
     }
     
 }

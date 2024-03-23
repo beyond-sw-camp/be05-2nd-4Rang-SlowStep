@@ -53,14 +53,6 @@
 
     </select>
 
-    <insert id="postExamInfo"
-        parameterType="com.example.slowstep_pjt.managePatient.domain.EXAM_INFO">
-
-        INSERT INTO EXAM_INFO
-        VALUES( default, #{ptNo}, #{rxCn}, #{disNm}, #{picMdNm}, NOW() )
-
-    </insert>
-
     <select id="getPtInfo"
             parameterType="java.lang.Integer"
             resultType="com.example.slowstep_pjt.managePatient.domain.PT_DTO">
@@ -71,6 +63,22 @@
 
     </select>
 
+
+    <select id="getDrugInfo"
+            resultType="com.example.slowstep_pjt.managePatient.domain.AD_DRUG_INFO_DTO">
+
+        SELECT drug_nm, drug_ad_freq
+        FROM AD_DRUG_INFO
+
+    </select>
+
+    <insert id="postDrugInfo"
+            parameterType="com.example.slowstep_pjt.managePatient.domain.AD_DRUG_INFO_DTO">
+
+        INSERT INTO AD_DRUG_INFO
+        VALUES( #{adDrugInfoNo}, #{ptHthInfoNo}, #{drugNm}, #{drugAdFreq})
+
+    </insert>
 
 
 </mapper>
