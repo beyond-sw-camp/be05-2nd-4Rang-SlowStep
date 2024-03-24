@@ -9,6 +9,7 @@ import com.example.slowstep_pjt.user.domain.UserDTO;
 @Mapper
 public interface UserMapper {
     
-    public List<UserDTO> findAll();
+   
 
+    UserDTO findByEmail(String email);
 }
