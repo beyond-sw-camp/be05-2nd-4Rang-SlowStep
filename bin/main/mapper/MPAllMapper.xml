@@ -14,6 +14,45 @@
         
     </select>
 
+    <insert id="postHealthInfo"
+        parameterType="com.example.slowstep_pjt.managePatient.domain.PT_HTH_INFO_DTO">
+
+        INSERT INTO PT_HTH_INFO
+        VALUES( default, #{ptNo}, #{ptBp}, #{ptBst}, #{ptWt}, #{ptHr}, NOW() )
+
+    </insert>
+
+    <select id="getExamInfo"
+        parameterType="java.lang.Integer"
+        resultType="com.example.slowstep_pjt.managePatient.domain.EXAM_INFO">
+
+        SELECT *
+        FROM EXAM_INFO
+        WHERE PT_NO = #{ptNo}
+
+    </select>
+
+    <select id="getExamInfoDetail"
+        parameterType="java.lang.Integer"
+        resultType="com.example.slowstep_pjt.managePatient.domain.EXAM_INFO">
+
+        SELECT *
+        FROM EXAM_INFO
+        WHERE PT_NO = #{ptNo} AND EXAM_NO = #{examNo}
+
+    </select>
+
+    <select id="getDisInfo"
+        parameterType="java.lang.Integer"
+        resultType="com.example.slowstep_pjt.managePatient.domain.EXAM_INFO">
+
+        SELECT DIS_NM, EXAM_YMD
+        FROM EXAM_INFO
+        WHERE PT_NO = #{ptNo}
+        ORDER BY EXAM_YMD DESC
+
+    </select>
+
     <select id="getPtInfo"
             parameterType="java.lang.Integer"
             resultType="com.example.slowstep_pjt.managePatient.domain.PT_DTO">
@@ -24,6 +63,22 @@
 
     </select>
 
+
+    <select id="getDrugInfo"
+            resultType="com.example.slowstep_pjt.managePatient.domain.AD_DRUG_INFO_DTO">
+
+        SELECT drug_nm, drug_ad_freq
+        FROM AD_DRUG_INFO
+
+    </select>
+
+    <insert id="postDrugInfo"
+            parameterType="com.example.slowstep_pjt.managePatient.domain.AD_DRUG_INFO_DTO">
+
+        INSERT INTO AD_DRUG_INFO
+        VALUES( #{adDrugInfoNo}, #{ptHthInfoNo}, #{drugNm}, #{drugAdFreq})
+
+    </insert>
 
 
 </mapper>

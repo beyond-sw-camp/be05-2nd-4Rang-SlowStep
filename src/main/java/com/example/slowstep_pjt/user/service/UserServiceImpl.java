@@ -8,21 +8,16 @@ import org.springframework.stereotype.Service;
 import com.example.slowstep_pjt.user.domain.UserDTO;
 import com.example.slowstep_pjt.user.mapper.UserMapper;
 
-@Service("user")
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+ 
 
     @Override
-    public List<UserDTO> getUser() {
-
-        System.out.println("debug >> UserServiceImpl getUser()");
-        List<UserDTO> list = userMapper.findAll();
-
-        return list;
+    public UserDTO getUserByEmail(String email) {
+        // 구현 내용은 필요에 따라 추가하십시오.
+        return userMapper.findByEmail(email);
     }
-    
-
-
 }
