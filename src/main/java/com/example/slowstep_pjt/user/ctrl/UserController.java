@@ -4,50 +4,68 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.slowstep_pjt.user.domain.UserDTO;
-import com.example.slowstep_pjt.user.service.UserServiceImpl;
+import com.example.slowstep_pjt.user.domain.UserRequest;
+import com.example.slowstep_pjt.user.domain.UserResponse;
+import com.example.slowstep_pjt.user.service.UserService;
 
-import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
 import java.util.*;
 
 @Controller
 @RequestMapping("/user")
+@RequiredArgsConstructor
 public class UserController {
 
-    @Resource(name = "userService")
-    private UserServiceImpl userService;
-    
+    private final UserService userService;
     private final PasswordEncoder passwordEncoder;
+    
+    @PostMapping("/login") 
+    public String login(UserRequest params, HttpSession session, RedirectAttributes attr){
+           
+        System.out.println("debug UserController client path/user/login");
+        System.out.println("param value>>>>" + params.getMbrEml());
+        System.out.println("param value>>>>" + params.getMbrPwd());
 
-    public UserController(PasswordEncoder passwordEncoder) {
-        this.passwordEncoder = passwordEncoder;
-    }
+        UserResponse response = userService.loginService(params);
 
-    @PostMapping("/login")
-    public String login(@RequestParam("id") String id,
-                        @RequestParam("pwd") String pwd,
-                        RedirectAttributes redirectAttributes) {
-        // 이메일과 비밀번호를 기반으로 로그인 처리
-        UserDTO user = userService.getUserByEmail(pwd);
-        if (user != null) {
-            // 비밀번호가 일치하는지 확인
-            if (passwordEncoder.matches(pwd, user.getPwd())) {
-                // 로그인 성공
-                // 사용자 유형에 따라 다른 페이지로 이동
-                if (user.getEmail().equals("doctor")) {
+        System.out.println("debug >>> ctrl result ," + response);
+        if (response != null && response.getMbrPwd() != null) {
+            // 암호화 이후 로그인 처리
+            String userPwd =  params.getMbrPwd();
+            String encorePwd = response.getMbrPwd();
+            if (passwordEncoder.matches(userPwd, encorePwd)) {
+                System.out.println("debug >>> matches() true");
+                response.setMbrPwd(userPwd);
+                session.setAttribute("loginUser", response);
+                
+                // 사용자의 직업 유형에 따라 다른 홈페이지로 리다이렉트
+                if (response.getJobTyp() == 'D') {
                     return "redirect:/doctor_home";
-                } else if (user.getEmail().equals("nurse")) {
+                } else if (response.getJobTyp() == 'N') {
                     return "redirect:/nurse_home";
+                } else {
+                    // 기타 직업 유형에 따른 처리
+                    return "redirect:/login";
                 }
+            } else {
+                System.out.println("debug>>>비밀번호가 일치하지 않습니다");
+                attr.addFlashAttribute("failMsg", "비밀번호가 일치하지 않습니다");
+                return "redirect:/login";
             }
+        } else {
+            System.out.println("debug>>>아이디가 일치하지 않습니다");
+            attr.addFlashAttribute("failMsg", "아이디가 일치하지 않습니다");
+            return "redirect:/login";
         }
-        // 로그인 실패 시 에러 메시지 전달 후 로그인 페이지로 리다이렉트
-        redirectAttributes.addFlashAttribute("error", "아이디 또는 비밀번호를 확인하세요");
-        return "redirect:/login";
     }
 }
