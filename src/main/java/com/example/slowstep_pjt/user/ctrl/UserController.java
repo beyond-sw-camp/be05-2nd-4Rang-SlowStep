@@ -19,7 +19,7 @@ import java.util.*;
 @RequestMapping("/user")
 public class UserController {
 
-    @Resource(name = "user")
+    @Resource(name = "userService")
     private UserServiceImpl userService;
     
     private final PasswordEncoder passwordEncoder;
