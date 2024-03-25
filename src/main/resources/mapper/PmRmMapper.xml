@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.example.slowstep_pjt.pm.mapper.PmRmMapper">
+
+    <select id="findPmRmNo"
+        parameterType="com.example.slowstep_pjt.pm.domain.PmRmRequest"
+        resultType="java.lang.Integer">
+        SELECT  
+            PM_RM_NO
+        FROM    
+            PM_RM
+        WHERE
+            MD_NO=#{mdNo}
+            AND
+            RN_NO=#{rnNo}
+    </select>
+</mapper>

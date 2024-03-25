@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.example.slowstep_pjt.pm.mapper.PmMapper">
+
+    <!-- <sql id="saveColumns">
+        pm_rm_no    ,
+        pm_cn       ,
+        trsm_dir    ,
+        trsm_dt
+    </sql> -->
+
+    <sql id="selectColumns">
+        pm_no       ,
+        pm_rm_no    ,
+        pm_cn       ,
+        trsm_dir    ,
+        rd_yn       ,
+        pm_dsptch_dt,
+        delete_yn   ,
+        delete_dt   ,
+        rd_yn_dt    ,
+        trsm_dt
+    </sql>
+
+    <!-- <update id="save"
+        parameterType="com.example.slowstep_pjt.pm.domain.PmRequest">
+        INSERT INTO PM(
+            <include refid="saveColumns" />
+        )
+        VALUES( #{pmRmNo},
+                #{pmCn},    
+                #{trsmDir},
+                NOW())
+    </update> -->
+
+    <select id="findAll"
+        parameterType="java.lang.Integer"
+        resultType="com.example.slowstep_pjt.pm.domain.PmResponse">
+        SELECT  
+            <include refid="selectColumns" /> 
+        FROM    
+            PM
+        WHERE
+            PM_RM_NO=#{pmRmNo}
+            AND
+            DELETE_YN=0
+        ORDER BY   
+            PM_DSPTCH_DT DESC
+    </select>
+
+    <delete id="deleteByPmNo"
+        parameterType="java.lang.Integer">
+    UPDATE PM
+    SET 
+        DELETE_YN   = 1 ,
+        DELETE_DT = NOW() 
+    WHERE 
+        PM_NO = #{pmNo} 
+    </delete>
+
+    <select id="findByPmNo"
+        parameterType="java.lang.Integer"
+        resultType="com.example.slowstep_pjt.pm.domain.PmResponse">
+        SELECT  
+            <include refid="selectColumns" /> 
+        FROM    
+            PM
+        WHERE
+            PM_NO=#{pmNo}
+    </select>
+
+    <update id="updateRdYn"
+        parameterType="java.lang.Integer">
+        UPDATE PM
+        SET 
+            RD_YN   = 1,
+            RD_YN_DT = NOW()
+        WHERE 
+            PM_NO = #{pmNo} 
+    </update>
+</mapper>
