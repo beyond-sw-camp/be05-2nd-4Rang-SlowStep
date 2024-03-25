@@ -1,6 +1,7 @@
 package com.example.slowstep_pjt.pm.domain;
 
 import java.util.Date;
+import java.util.Optional;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -15,11 +16,10 @@ public class PmRequest {
     private Integer pmNo        ;
     private Integer pmRmNo      ;
     private String  pmCn        ;
-    private Integer trsmDir     ;
-    private Integer rdYn        ;
+    private String  trsmDir     ;
+    private String  rdYn        ;
     private Date    pmDsptchDt  ;
-    private Integer deleteYn    ;
+    private String  deleteYn    ;
     private Date    deleteDt    ;
-    private Date    rdYnDt      ;
-    private Date    trsmDt      ;
+    private Date    rdDt        ;
 }
