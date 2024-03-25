@@ -3,11 +3,19 @@
 
 <mapper namespace="com.example.slowstep_pjt.user.mapper.UserMapper">
 
-    <!-- 사용자 이메일로 사용자 정보 조회 -->
-    <select id="findByEmail" parameterType="string"
-            resultType="com.example.slowstep_pjt.user.domain.UserDTO">
-        SELECT * FROM ENCORE_USER_INFO_TBL
-        WHERE email = #{email}
-    </select>
+    <select id="loginRow"
+    parameterType="com.example.slowstep_pjt.user.domain.UserRequest"
+    resultType="com.example.slowstep_pjt.user.domain.UserResponse">
+
+
+    SELECT MBR_EML, MBR_PWD
+    FROM MBR
+    WHERE MBR_EML = #{mbrEml} AND MBR_PWD = #{mbrPwd}
+    
+
+
+</select>
+
+
 
 </mapper>

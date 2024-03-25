@@ -1,15 +1,19 @@
 package com.example.slowstep_pjt.user.mapper;
 
-import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
 
-import com.example.slowstep_pjt.user.domain.UserDTO;
+import com.example.slowstep_pjt.user.domain.UserRequest;
+import com.example.slowstep_pjt.user.domain.UserResponse;
+
+
 
 @Mapper
 public interface UserMapper {
-    
+
+    public UserResponse loginRow(UserRequest params) ;
+
    
 
-    UserDTO findByEmail(String email);
+    
+    
 }
