@@ -53,7 +53,7 @@
     UPDATE PM
     SET 
         DELETE_YN   = 1 ,
-        DELETE_DT = NOW() 
+        DELETE_DT = IF(DELETE_DT IS NULL, NOW(), DELETE_DT)
     WHERE 
         PM_NO = #{pmNo} 
     </delete>
@@ -73,9 +73,10 @@
         parameterType="java.lang.Integer">
         UPDATE PM
         SET 
-            RD_YN   = 1,
-            RD_DT = NOW()
+            RD_YN = 1,
+            RD_DT = IF(RD_DT IS NULL, NOW(), RD_DT)
         WHERE 
-            PM_NO = #{pmNo} 
+            PM_NO = #{pmNo};
+        
     </update>
 </mapper>

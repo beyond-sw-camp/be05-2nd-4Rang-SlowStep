@@ -55,7 +55,7 @@ public class PmController {
     @DeleteMapping("/delete.slowstep")
     public ResponseEntity<String> delete(PmRequest params, Model model){
         // 디버깅을 위한 더미값 할당
-        params.setPmNo(4);
+        params.setPmNo(3);
 
         Integer targetIdx=params.getPmNo();
         System.out.println("debug >>> Post params.toString() , "+params.toString());
@@ -66,12 +66,16 @@ public class PmController {
     }
 
     @GetMapping("/getDetailByPmNo.slowstep")
-    public ResponseEntity<PmResponse> getDetailByPmNo(PmRequest params, Model model) {
+    public ResponseEntity<Object> getDetailByPmNo(PmRequest params, Model model) {
         // 디버깅을 위한 더미값 할당
-        params.setPmNo(1);
+        params.setPmNo(3);
 
         Integer targetIdx=params.getPmNo();
         PmResponse  response    = pmService.getDetailByPmNo(targetIdx);
+        if (response == null){
+            System.out.println("debug >>>>> 삭제된 게시글입니다.");
+            return new ResponseEntity<>("삭제된 게시글입니다.", HttpStatus.OK);
+        }
         System.out.println("debug >>> Get params.toString() , "+response.toString());
         System.out.println("debug >>> Get Path /pmrm/getDetailByPmNo.slowstep");
         return new ResponseEntity<>(response, HttpStatus.OK);
