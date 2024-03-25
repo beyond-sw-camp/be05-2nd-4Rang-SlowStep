@@ -10,5 +10,4 @@ public class SlowstepPjtApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SlowstepPjtApplication.class, args);
 	}
-
 }

@@ -43,8 +43,13 @@ public class PmServiceImpl implements PmService {
     @Override
     public PmResponse getDetailByPmNo(Integer pmNo) {
         System.out.println("debug >>> service viewDetails ");
-        pmMapper.updateRdYn(pmNo);
         PmResponse  response    = pmMapper.findByPmNo(pmNo);
-        return response;
+        String deleteYn   = response.getDeleteYn();
+        if (deleteYn == "0"){
+            pmMapper.updateRdYn(pmNo);
+            return response;
+        } else {
+            return null;
+        }
     }
 }
