@@ -17,12 +17,7 @@ public class PmServiceImpl implements PmService {
 
     private final PmMapper      pmMapper    ;
 
-    // @Transactional
-    // @Override
-    // public void savePm(PmRequest params) {
-    //     System.out.println("debug >>> service savePm ");
-    //     pmMapper.save(params); 
-    // }
+    
 
     @Transactional
     @Override
@@ -46,5 +41,11 @@ public class PmServiceImpl implements PmService {
         pmMapper.updateRdYn(pmNo);
         PmResponse  response    = pmMapper.findByPmNo(pmNo);
         return response;
+    }
+
+    @Override
+    public void writePmCn(PmRequest params) {
+        System.out.println("debug >>> PmService writePmCn");
+        pmMapper.writePmCn(params);
     }
 }
