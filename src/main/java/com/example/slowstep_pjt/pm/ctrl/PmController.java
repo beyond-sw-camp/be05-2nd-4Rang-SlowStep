@@ -17,6 +17,8 @@ import com.example.slowstep_pjt.pm.domain.PmResponse;
 import com.example.slowstep_pjt.pm.domain.PmRmRequest;
 import com.example.slowstep_pjt.pm.service.PmRmService;
 import com.example.slowstep_pjt.pm.service.PmService;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @Controller
 @RequestMapping("/pmrm")
@@ -42,17 +44,13 @@ public class PmController {
         return new ResponseEntity<>(lst, HttpStatus.OK);
     }
 
-    // @PostMapping("/save.slowstep")
-    // public String save(PmRequest params, Model model){
-    //     // 디버깅을 위한 더미값 할당
-    //     params.setPmRmNo(2);
-    //     params.setPmCn("test");
-    //     params.setTrsmDir(1);
-    //     System.out.println("debug >>> Post params.toString() , "+params.toString());
-    //     System.out.println("debug >>> Get Path /pmrm/save.slowstep");
-    //     pmService.savePm(params);
-    //     return "save";
-    // }
+    @PostMapping("/write.slowstep")
+    public ResponseEntity<String> write(@RequestBody PmRequest params, Model model) {
+        System.out.println("debug >>> PmController write POST /pmrm/write.slowstep");
+        pmService.writePmCn(params);
+        return new ResponseEntity<>(null, HttpStatus.OK);
+    }
+    
 
     @DeleteMapping("/delete.slowstep")
     public ResponseEntity<String> delete(PmRequest params, Model model){

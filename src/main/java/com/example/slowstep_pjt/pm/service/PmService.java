@@ -10,4 +10,5 @@ public interface PmService {
     public  void                deletePmByNo(Integer pmNo);
     public  List<PmResponse>    findAllPm(Integer pmRmNo);
     public  PmResponse          getDetailByPmNo(Integer pmNo);
+    public void writePmCn(PmRequest params);
 }

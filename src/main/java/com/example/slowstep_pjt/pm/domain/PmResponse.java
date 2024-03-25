@@ -20,6 +20,5 @@ public class PmResponse {
     private Date    pmDsptchDt  ;
     private Integer deleteYn    ;
     private Date    deleteDt    ;
-    private Date    rdYnDt      ;
-    private Date    trsmDt      ;
+    private Date    rdDt        ;
 }

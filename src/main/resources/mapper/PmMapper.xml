@@ -23,16 +23,16 @@
         trsm_dt
     </sql>
 
-    <!-- <update id="save"
-        parameterType="com.example.slowstep_pjt.pm.domain.PmRequest">
-        INSERT INTO PM(
-            <include refid="saveColumns" />
-        )
-        VALUES( #{pmRmNo},
-                #{pmCn},    
+    <insert id="writePmCn"
+            parameterType="com.example.slowstep_pjt.pm.domain.PmRequest">
+        INSERT INTO PM
+        VALUES (default,
+                #{pmRmNo},
+                #{pmCn},
                 #{trsmDir},
-                NOW())
-    </update> -->
+                default,
+                default)
+    </insert>
 
     <select id="findAll"
         parameterType="java.lang.Integer"
