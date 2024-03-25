@@ -3,7 +3,15 @@
 
 <mapper namespace = "com.example.slowstep_pjt.managePatient.mapper.MPNurseMapper">
 
+    <select id="getExamInfoNM"
+        parameterType="java.lang.Integer"
+        resultType="com.example.slowstep_pjt.managePatient.domain.EXAM_INFO">
 
+        SELECT PIC_MD_NM
+        FROM EXAM_INFO
+        WHERE EXAM_NO = #{examNo}
+
+    </select>
 
 
 
