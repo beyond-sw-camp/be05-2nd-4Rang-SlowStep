@@ -3,8 +3,10 @@ package com.example.slowstep_pjt.pm.domain;
 import java.util.Date;
 import java.util.Optional;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -12,6 +14,8 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class PmResponse {
     private Integer pmNo        ;
     private Integer pmRmNo      ;
@@ -22,4 +26,6 @@ public class PmResponse {
     private String  deleteYn    ;
     private Date    deleteDt    ;
     private Date    rdDt        ;
+    private String  mbrNm       ;
+    private String  mdPicDept   ;
 }

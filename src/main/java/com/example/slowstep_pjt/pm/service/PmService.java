@@ -11,4 +11,6 @@ public interface PmService {
     public  List<PmResponse>    findAllPm(Integer pmRmNo);
     public  PmResponse          getDetailByPmNo(Integer pmNo);
     public void writePmCn(PmRequest params);
+    public  List<PmResponse>    getDoctorList();
+    public  List<PmResponse>    getNurseList();
 }

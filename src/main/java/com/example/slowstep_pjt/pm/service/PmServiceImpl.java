@@ -53,4 +53,18 @@ public class PmServiceImpl implements PmService {
         System.out.println("debug >>> PmService writePmCn");
         pmMapper.writePmCn(params);
     }
+
+    @Override
+    public List<PmResponse> getDoctorList() {
+        System.out.println("debug >>> PmService getDoctorList");
+        List<PmResponse> lst = pmMapper.getDoctorList();
+        return lst;
+    }
+
+    @Override
+    public List<PmResponse> getNurseList() {
+        System.out.println("debug >>> PmService getNurseList");
+        List<PmResponse> lst = pmMapper.getNurseList();
+        return lst;
+    }
 }

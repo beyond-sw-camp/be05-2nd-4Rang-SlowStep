@@ -14,4 +14,6 @@ public interface PmMapper {
     public  List<PmResponse>    findAll(Integer pmRmNo)     ;
     public  PmResponse          findByPmNo(Integer pmNo)    ;
     public  void                updateRdYn(Integer pmNo)    ;
+    public  List<PmResponse>    getDoctorList()             ;
+    public  List<PmResponse>    getNurseList()              ;
 }

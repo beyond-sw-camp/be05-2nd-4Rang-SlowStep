@@ -79,4 +79,31 @@
             PM_NO = #{pmNo};
         
     </update>
+
+    <select id="getDoctorList"
+        resultType="com.example.slowstep_pjt.pm.domain.PmResponse">
+        SELECT
+            MBR.MBR_NM,
+            PM_RM.PM_RM_NO,
+            UH_MD.MD_PIC_DEPT
+        FROM
+            PM_RM
+        JOIN
+            UH_MD USING (MD_NO)
+        JOIN
+            MBR ON (PM_RM.MD_NO = MBR.MBR_NO)
+    </select>
+
+    <select id="getNurseList"
+        resultType="com.example.slowstep_pjt.pm.domain.PmResponse">
+        SELECT
+            MBR.MBR_NM,
+            PM_RM.PM_RM_NO
+        FROM
+            PM_RM
+        JOIN
+            CH_RN USING (RN_NO)
+        JOIN
+            MBR ON (PM_RM.RN_NO = MBR.MBR_NO)
+    </select>
 </mapper>

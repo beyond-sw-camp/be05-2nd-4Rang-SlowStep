@@ -1,5 +1,6 @@
 package com.example.slowstep_pjt.pm.ctrl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ import com.example.slowstep_pjt.pm.domain.PmRmRequest;
 import com.example.slowstep_pjt.pm.service.PmRmService;
 import com.example.slowstep_pjt.pm.service.PmService;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Controller
@@ -48,7 +51,7 @@ public class PmController {
     public ResponseEntity<String> write(@RequestBody PmRequest params, Model model) {
         System.out.println("debug >>> PmController write POST /pmrm/write.slowstep");
         pmService.writePmCn(params);
-        return new ResponseEntity<>(null, HttpStatus.OK);
+        return new ResponseEntity<>("쪽지가 정상적으로 발송되었습니다.", HttpStatus.OK);
     }
     
 
@@ -79,5 +82,17 @@ public class PmController {
         System.out.println("debug >>> Get params.toString() , "+response.toString());
         System.out.println("debug >>> Get Path /pmrm/getDetailByPmNo.slowstep");
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/doctor_list.slowstep")
+    public ResponseEntity<List<PmResponse>>getDoctorList() {
+        System.out.println("debug >>> PmController GET /pmrm/doctor_list.slowstep");
+        return new ResponseEntity<List<PmResponse>>(pmService.getDoctorList(), HttpStatus.OK);
+    }
+
+    @GetMapping("/nurse_list.slowstep")
+    public ResponseEntity<List<PmResponse>>getNurseList() {
+        System.out.println("debug >>> PmController GET /pmrm/nurse_list.slowstep");
+        return new ResponseEntity<List<PmResponse>>(pmService.getNurseList(), HttpStatus.OK);
     }
 }
