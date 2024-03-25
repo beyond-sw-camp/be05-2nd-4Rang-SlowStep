@@ -31,7 +31,7 @@ public class PmController {
     public ResponseEntity<List<PmResponse>> view(PmRmRequest params, Model model){
         // 디버깅을 위한 더미값 할당
         params.setMdNo(1);
-        params.setRnNo(3);
+        params.setRnNo(2);
         System.out.println(params.toString());
         System.out.println("debug >>> Get Path /pmrm/view.slowstep");
         Integer pmRmNo=pmRmservice.findPmRmNo(params);  // 여기가 문제.
@@ -57,7 +57,7 @@ public class PmController {
     @DeleteMapping("/delete.slowstep")
     public ResponseEntity<String> delete(PmRequest params, Model model){
         // 디버깅을 위한 더미값 할당
-        params.setPmNo(7);
+        params.setPmNo(4);
 
         Integer targetIdx=params.getPmNo();
         System.out.println("debug >>> Post params.toString() , "+params.toString());

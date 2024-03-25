@@ -15,12 +15,11 @@
         pm_rm_no    ,
         pm_cn       ,
         trsm_dir    ,
-        rd_yn       ,
         pm_dsptch_dt,
+        rd_yn       ,
+        rd_dt       ,
         delete_yn   ,
-        delete_dt   ,
-        rd_yn_dt    ,
-        trsm_dt
+        delete_dt
     </sql>
 
     <!-- <update id="save"
@@ -75,7 +74,7 @@
         UPDATE PM
         SET 
             RD_YN   = 1,
-            RD_YN_DT = NOW()
+            RD_DT = NOW()
         WHERE 
             PM_NO = #{pmNo} 
     </update>
