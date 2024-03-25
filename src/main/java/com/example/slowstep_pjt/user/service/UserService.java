@@ -17,9 +17,9 @@ public class UserService {
 
     private final UserMapper userMapper;
 
-    public UserResponse loginService(UserRequest params){
+    public UserResponse loginService(String mbrEml){
         System.out.println("debug>>>>> service loginService");
-        return userMapper.loginRow(params);
+        return userMapper.loginRow(mbrEml);
     
     }
 

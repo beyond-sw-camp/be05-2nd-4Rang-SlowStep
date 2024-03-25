@@ -8,9 +8,9 @@
     resultType="com.example.slowstep_pjt.user.domain.UserResponse">
 
 
-    SELECT MBR_EML, MBR_PWD
+    SELECT *
     FROM MBR
-    WHERE MBR_EML = #{mbrEml} AND MBR_PWD = #{mbrPwd}
+    WHERE MBR_EML = #{mbrEml}
     
 
 

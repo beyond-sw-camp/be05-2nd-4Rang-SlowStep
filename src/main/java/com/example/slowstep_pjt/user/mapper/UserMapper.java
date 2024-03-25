@@ -10,7 +10,7 @@ import com.example.slowstep_pjt.user.domain.UserResponse;
 @Mapper
 public interface UserMapper {
 
-    public UserResponse loginRow(UserRequest params) ;
+    public UserResponse loginRow(String mbrEml) ;
 
    
 
