@@ -1,6 +1,8 @@
 package com.example.slowstep_pjt.pm.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -55,16 +57,25 @@ public class PmServiceImpl implements PmService {
     }
 
     @Override
-    public List<PmResponse> getDoctorList() {
+    public Map<String, String> getDoctorList() {
         System.out.println("debug >>> PmService getDoctorList");
+        Map<String, String> map = new HashMap<>();
         List<PmResponse> lst = pmMapper.getDoctorList();
-        return lst;
+        for(PmResponse some : lst) {
+            map.put("name", some.getMbrNm());
+            map.put("dept", some.getMdPicDept());
+        }
+        return map;
     }
 
     @Override
-    public List<PmResponse> getNurseList() {
+    public Map<String, String> getNurseList() {
         System.out.println("debug >>> PmService getNurseList");
+        Map<String, String> map = new HashMap<>();
         List<PmResponse> lst = pmMapper.getNurseList();
-        return lst;
+        for(PmResponse some : lst) {
+            map.put("name", some.getMbrNm());
+        }
+        return map;
     }
 }
