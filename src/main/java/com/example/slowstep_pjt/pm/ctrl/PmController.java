@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,6 +19,10 @@ import com.example.slowstep_pjt.pm.domain.PmResponse;
 import com.example.slowstep_pjt.pm.domain.PmRmRequest;
 import com.example.slowstep_pjt.pm.service.PmRmService;
 import com.example.slowstep_pjt.pm.service.PmService;
+import com.example.slowstep_pjt.user.domain.UserDTO;
+
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -32,11 +37,12 @@ public class PmController {
     @Autowired
     private PmService   pmService   ;
 
-    @GetMapping("/view.slowstep")
-    public ResponseEntity<List<PmResponse>> view(PmRmRequest params, Model model){
+    @GetMapping("/view/{rnNo}")
+    public ResponseEntity<List<PmResponse>> view(PmRmRequest params, HttpSession session, @PathVariable("rnNo") Integer rnNo){
         // 디버깅을 위한 더미값 할당
-        params.setMdNo(1);
-        params.setRnNo(2);
+        UserDTO userResponse   = (UserDTO) session.getAttribute("loginUser");
+        params.setMdNo(userResponse.getMbrNo());
+        params.setRnNo(rnNo);
         System.out.println(params.toString());
         System.out.println("debug >>> Get Path /pmrm/view.slowstep");
         Integer pmRmNo=pmRmservice.findPmRmNo(params);  // 여기가 문제.
@@ -55,25 +61,18 @@ public class PmController {
     }
     
 
-    @DeleteMapping("/delete.slowstep")
-    public ResponseEntity<String> delete(PmRequest params, Model model){
+    @DeleteMapping("/delete/{targetIdx}")
+    public ResponseEntity<String> delete(@PathVariable("targetIdx") Integer targetIdx){
         // 디버깅을 위한 더미값 할당
-        params.setPmNo(3);
-
-        Integer targetIdx=params.getPmNo();
-        System.out.println("debug >>> Post params.toString() , "+params.toString());
         System.out.println("debug >>> Delete Path /pmrm/delete.slowstep");
         pmService.deletePmByNo(targetIdx);
 
         return new ResponseEntity<>(targetIdx+"번 쪽지 삭제 완료(DELETE_YN Chaged)", HttpStatus.OK);
     }
 
-    @GetMapping("/getDetailByPmNo.slowstep")
-    public ResponseEntity<Object> getDetailByPmNo(PmRequest params, Model model) {
+    @GetMapping("/getDetailByPmNo/{targetIdx}")
+    public ResponseEntity<Object> getDetailByPmNo(@PathVariable("targetIdx") Integer targetIdx) {
         // 디버깅을 위한 더미값 할당
-        params.setPmNo(3);
-
-        Integer targetIdx=params.getPmNo();
         PmResponse  response    = pmService.getDetailByPmNo(targetIdx);
         if (response == null){
             System.out.println("debug >>>>> 삭제된 게시글입니다.");

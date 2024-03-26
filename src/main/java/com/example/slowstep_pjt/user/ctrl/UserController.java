@@ -1,5 +1,7 @@
 package com.example.slowstep_pjt.user.ctrl;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.slowstep_pjt.user.domain.UserRequest;
-import com.example.slowstep_pjt.user.domain.UserResponse;
+
+import com.example.slowstep_pjt.user.domain.UserDTO;
 import com.example.slowstep_pjt.user.service.UserService;
 
 import jakarta.servlet.http.HttpSession;
@@ -37,7 +39,7 @@ public class UserController {
            
         System.out.println("debug UserController client path/user/login");
 
-        UserResponse response = userService.loginService(id);
+        UserDTO response = userService.loginService(id);
 
         System.out.println("debug >>> ctrl result ," + response);
         if (response != null && response.getMbrPwd() != null) {
@@ -46,6 +48,7 @@ public class UserController {
                 System.out.println("debug >>> matches() true");
                 response.setMbrPwd(pwd);
                 session.setAttribute("loginUser", response);
+                System.out.println("session >>>>" + session.getAttribute("loginUser"));
                 
                 // 사용자의 직업 유형에 따라 다른 홈페이지로 리다이렉트
                 if (response.getJobTyp() == 'D') {
@@ -68,5 +71,14 @@ public class UserController {
             attr.addFlashAttribute("failMsg", "아이디가 일치하지 않습니다");
             return "redirect:/login";
         }
+    }
+
+
+    @GetMapping("/logout")
+    public ResponseEntity<String> logout(HttpSession session) {
+        System.out.println("debug UserController client path/user/logout");
+
+        session.invalidate();
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

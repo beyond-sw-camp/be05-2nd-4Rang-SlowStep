@@ -4,8 +4,8 @@
 <mapper namespace="com.example.slowstep_pjt.user.mapper.UserMapper">
 
     <select id="loginRow"
-    parameterType="com.example.slowstep_pjt.user.domain.UserRequest"
-    resultType="com.example.slowstep_pjt.user.domain.UserResponse">
+    parameterType="com.example.slowstep_pjt.user.domain.UserDTO"
+    resultType="com.example.slowstep_pjt.user.domain.UserDTO">
 
 
     SELECT *

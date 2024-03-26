@@ -1,3 +1,4 @@
+
 package com.example.slowstep_pjt.user.domain;
 
 import lombok.AllArgsConstructor;
@@ -13,7 +14,7 @@ import lombok.Setter;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserResponse {
+public class UserDTO {
     private Integer mbrNo;
     private String mbrNm;
     private String mbrPwd;
