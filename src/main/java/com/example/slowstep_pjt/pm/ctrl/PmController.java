@@ -44,11 +44,13 @@ public class PmController {
     private PmRmService pmRmService ;
     @Autowired
     private PmService   pmService   ;
-
+    
+    
     @GetMapping("/view/{no}")
     @Operation(summary = "쪽지내역 열람", description = "로그인된 세션의 유저와, 유저가 선택한 간호사의 번호로부터 두 사용자간 주고받은 쪽지내역을 출력합니다.")
     public ResponseEntity<List<Map<String, String>>> view(PmRmRequest params, HttpSession session, @PathVariable("no") Integer no) {
         UserDTO userResponse = (UserDTO) session.getAttribute("loginUser");
+        
         if (userResponse.getJobTyp() == 'D') {
             params.setMdNo(userResponse.getMbrNo());
             params.setRnNo(no);
@@ -56,17 +58,10 @@ public class PmController {
             params.setRnNo(userResponse.getMbrNo());
             params.setMdNo(no);
         }
+
         System.out.println(params.toString());
         System.out.println("debug >>> Get Path /pmrm/view.slowstep");
-        Integer pmRmNo = pmRmService.findPmRmNo(params);  // 여기가 문제.
-
-        // 여기에 pmRmNo가 없으면 인서트하고 인덱스값 새로 가져오면 된다.
-        if (pmRmNo == null){
-            pmRmService.savePmRmNo(params);
-            pmRmNo = pmRmService.findPmRmNo(params);
-        }
-
-        List<PmResponse> lst = pmService.findAllPm(pmRmNo);
+        List<PmResponse> lst = pmService.findAllPm(pmService.checkView(params.getMdNo(), params.getRnNo()));
         List<Map<String, String>> resultList = new ArrayList<>();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         for (PmResponse response : lst) {
@@ -132,3 +127,7 @@ public class PmController {
     }
     
 }
+
+
+
+
