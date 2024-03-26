@@ -7,4 +7,5 @@ import com.example.slowstep_pjt.pm.domain.PmRmRequest;
 @Mapper
 public interface PmRmMapper {
     public Integer findPmRmNo(PmRmRequest params);
+    public void savePmRmNo(PmRmRequest params);
 }
