@@ -65,7 +65,7 @@ public class PmController {
     }
 
     @PostMapping("/write.slowstep")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "쪽지작성", description = "쪽지를 작성하고 저장하는 기능")
     public ResponseEntity<String> write(@RequestBody PmRequest params, Model model) {
         System.out.println("debug >>> PmController write POST /pmrm/write.slowstep");
         pmService.writePmCn(params);
@@ -98,14 +98,14 @@ public class PmController {
     }
 
     @GetMapping("/doctor_list.slowstep")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "의사 목록", description = "쪽지를 보낼 수 있는 의사의 목록을 표시합니다")
     public ResponseEntity<Map<String, String>>getDoctorList() {
         System.out.println("debug >>> PmController GET /pmrm/doctor_list.slowstep");
         return new ResponseEntity<Map<String, String>>(pmService.getDoctorList(), HttpStatus.OK);
     }
 
     @GetMapping("/nurse_list.slowstep")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "간호사 목록", description = "쪽지를 보낼 수 있는 간호사의 목록을 의사의 페이지에 표시합니다")
     public ResponseEntity<Map<String, String>>getNurseList() {
         System.out.println("debug >>> PmController GET /pmrm/nurse_list.slowstep");
         return new ResponseEntity<Map<String,String>>(pmService.getNurseList(), HttpStatus.OK);
