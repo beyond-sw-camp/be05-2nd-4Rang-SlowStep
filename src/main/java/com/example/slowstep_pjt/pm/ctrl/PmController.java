@@ -42,13 +42,18 @@ public class PmController {
     @Autowired
     private PmService   pmService   ;
 
-    @GetMapping("/view/{rnNo}")
+    @GetMapping("/view/{no}")
     @Operation(summary = "기능이름", description = "기능설명")
-    public ResponseEntity<List<PmResponse>> view(PmRmRequest params, HttpSession session, @PathVariable("rnNo") Integer rnNo){
+    public ResponseEntity<List<PmResponse>> view(PmRmRequest params, HttpSession session, @PathVariable("no") Integer no){
         // 디버깅을 위한 더미값 할당
         UserDTO userResponse   = (UserDTO) session.getAttribute("loginUser");
-        params.setMdNo(userResponse.getMbrNo());
-        params.setRnNo(rnNo);
+        if (userResponse.getJobTyp()=='D'){
+            params.setMdNo(userResponse.getMbrNo());
+            params.setRnNo(no);
+        } else{
+            params.setRnNo(userResponse.getMbrNo());
+            params.setMdNo(no);          
+        }
         System.out.println(params.toString());
         System.out.println("debug >>> Get Path /pmrm/view.slowstep");
         Integer pmRmNo=pmRmservice.findPmRmNo(params);  // 여기가 문제.
