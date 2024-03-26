@@ -47,23 +47,23 @@ public class PmController {
 
     @GetMapping("/view/{no}")
     @Operation(summary = "쪽지내역 열람", description = "로그인된 세션의 유저와, 유저가 선택한 간호사의 번호로부터 두 사용자간 주고받은 쪽지내역을 출력합니다.")
-    public ResponseEntity<Map<String, String>> view(PmRmRequest params, HttpSession session, @PathVariable("no") Integer no){
-        // 디버깅을 위한 더미값 할당
-        UserDTO userResponse   = (UserDTO) session.getAttribute("loginUser");
-        if (userResponse.getJobTyp()=='D'){
+    public ResponseEntity<List<Map<String, String>>> view(PmRmRequest params, HttpSession session, @PathVariable("no") Integer no) {
+        UserDTO userResponse = (UserDTO) session.getAttribute("loginUser");
+        if (userResponse.getJobTyp() == 'D') {
             params.setMdNo(userResponse.getMbrNo());
             params.setRnNo(no);
-        } else{
+        } else {
             params.setRnNo(userResponse.getMbrNo());
-            params.setMdNo(no);          
+            params.setMdNo(no);
         }
         System.out.println(params.toString());
         System.out.println("debug >>> Get Path /pmrm/view.slowstep");
-        Integer pmRmNo=pmRmservice.findPmRmNo(params);  // 여기가 문제.
-        List<PmResponse>    lst = pmService.findAllPm(pmRmNo);
-        Map<String,String> map  = new HashMap<>();
+        Integer pmRmNo = pmRmservice.findPmRmNo(params);  // 여기가 문제.
+        List<PmResponse> lst = pmService.findAllPm(pmRmNo);
+        List<Map<String, String>> resultList = new ArrayList<>();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        for(PmResponse response:lst){
+        for (PmResponse response : lst) {
+            Map<String, String> map = new HashMap<>();
             map.put("PM_NO", Integer.toString(response.getPmNo()));
             map.put("PM_RM_NO", Integer.toString(response.getPmRmNo()));
             map.put("PM_CN", response.getPmCn());
@@ -71,9 +71,11 @@ public class PmController {
             map.put("PM_DSPTCH_DT", format.format(response.getPmDsptchDt()));
             map.put("RD_YN", response.getRdYn());
             map.put("RD_DT", format.format(response.getRdDt()));
+            resultList.add(map);
         }
-        return new ResponseEntity<>(map, HttpStatus.OK);
+        return new ResponseEntity<>(resultList, HttpStatus.OK);
     }
+    
 
     @PostMapping("/write.slowstep")
     @Operation(summary = "쪽지작성", description = "쪽지를 작성하고 저장하는 기능")
