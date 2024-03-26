@@ -67,6 +67,7 @@ public class PmController {
             map.put("PM_NO", Integer.toString(response.getPmNo()));
             map.put("PM_RM_NO", Integer.toString(response.getPmRmNo()));
             map.put("PM_CN", response.getPmCn());
+            map.put("TRSM_DIR", response.getTrsmDir());
             map.put("PM_DSPTCH_DT", format.format(response.getPmDsptchDt()));
             map.put("RD_YN", response.getRdYn());
             map.put("RD_DT", format.format(response.getRdDt()));
