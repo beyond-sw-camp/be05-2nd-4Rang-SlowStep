@@ -111,16 +111,16 @@ public class PmController {
     }
 
     @GetMapping("/doctor_list.slowstep")
-    @Operation(summary = "의사 목록", description = "쪽지를 보낼 수 있는 의사의 목록을 표시합니다")
-    public ResponseEntity<Map<String, String>>getDoctorList() {
+    @Operation(summary = "의사 목록", description = "쪽지를 보낼 수 있는 의사의 목록을 간호사의 페이지에 표시합니다")
+    public ResponseEntity<List<Map<String, String>>>getDoctorList() {
         System.out.println("debug >>> PmController GET /pmrm/doctor_list.slowstep");
-        return new ResponseEntity<Map<String, String>>(pmService.getDoctorList(), HttpStatus.OK);
+        return new ResponseEntity<List<Map<String, String>>>(pmService.getDoctorList(), HttpStatus.OK);
     }
 
     @GetMapping("/nurse_list.slowstep")
     @Operation(summary = "간호사 목록", description = "쪽지를 보낼 수 있는 간호사의 목록을 의사의 페이지에 표시합니다")
-    public ResponseEntity<Map<String, String>>getNurseList() {
+    public ResponseEntity<List<Map<String, String>>>getNurseList() {
         System.out.println("debug >>> PmController GET /pmrm/nurse_list.slowstep");
-        return new ResponseEntity<Map<String,String>>(pmService.getNurseList(), HttpStatus.OK);
+        return new ResponseEntity<List<Map<String,String>>>(pmService.getNurseList(), HttpStatus.OK);
     }
 }

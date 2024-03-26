@@ -12,6 +12,6 @@ public interface PmService {
     public  List<PmResponse>    findAllPm(Integer pmRmNo);
     public  PmResponse          getDetailByPmNo(Integer pmNo);
     public void writePmCn(PmRequest params);
-    public  Map<String, String>    getDoctorList();
-    public  Map<String, String>    getNurseList();
+    public  List<Map<String, String>>    getDoctorList();
+    public  List<Map<String, String>>    getNurseList();
 }

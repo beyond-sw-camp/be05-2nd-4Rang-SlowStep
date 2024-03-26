@@ -1,5 +1,6 @@
 package com.example.slowstep_pjt.pm.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,25 +58,30 @@ public class PmServiceImpl implements PmService {
     }
 
     @Override
-    public Map<String, String> getDoctorList() {
+    public List<Map<String, String>> getDoctorList() {
         System.out.println("debug >>> PmService getDoctorList");
-        Map<String, String> map = new HashMap<>();
+        List<Map<String, String>> info = new ArrayList<>();
         List<PmResponse> lst = pmMapper.getDoctorList();
         for(PmResponse some : lst) {
+            Map<String, String> map = new HashMap<>();
             map.put("name", some.getMbrNm());
             map.put("dept", some.getMdPicDept());
+            info.add(map);
         }
-        return map;
+
+        return info;
     }
 
     @Override
-    public Map<String, String> getNurseList() {
+    public List<Map<String, String>> getNurseList() {
         System.out.println("debug >>> PmService getNurseList");
-        Map<String, String> map = new HashMap<>();
+        List<Map<String, String>> info = new ArrayList<>();
         List<PmResponse> lst = pmMapper.getNurseList();
         for(PmResponse some : lst) {
+            Map<String, String> map = new HashMap<>();
             map.put("name", some.getMbrNm());
+            info.add(map);
         }
-        return map;
+        return info;
     }
 }
