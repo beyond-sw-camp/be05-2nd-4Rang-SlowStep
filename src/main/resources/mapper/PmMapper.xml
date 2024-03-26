@@ -95,4 +95,24 @@
         JOIN
             CH_RN ON (CH_RN.RN_NO = MBR.MBR_NO)
     </select>
+
+    <select id="checkView"
+        parameterType="java.lang.Integer"
+        resultType="java.lang.Integer">
+        SELECT
+            PM_RM_NO
+        FROM
+            PM_RM
+        WHERE
+            MD_NO = #{doctorNo} AND RN_NO = #{nurseNo}
+    </select>
+
+    <insert id="createView"
+        parameterType="java.lang.Integer">
+        INSERT INTO
+            PM_RM
+        VALUES (default,
+                #{doctorNo},
+                #{nurseNo})
+    </insert>
 </mapper>

@@ -44,7 +44,29 @@ public class PmController {
     private PmRmService pmRmservice ;
     @Autowired
     private PmService   pmService   ;
+    @Autowired
+    private PmRmRequest pmRmRequest;
+    
+    @GetMapping("/checkView/{MbrNo}")
+    public String getMethodName(@PathVariable("MbrNo") Integer MbrNo, HttpSession session) {
+        System.out.println("debug >>> Pm Controller GET /pmrm/CheckView");
+        UserDTO user = (UserDTO)session.getAttribute("loginUser");
+        Integer no = user.getMbrNo();
+        Integer doctorNo = 0;
+        Integer nurseNo = 0;
+        if(user.getJobTyp() == 'D') {
+            doctorNo = no;
+            nurseNo = MbrNo;
+            
+        } else {
+            nurseNo = no;
+            doctorNo = MbrNo;
+        }
 
+        Integer rmNo = pmService.checkView(doctorNo, nurseNo);
+        view(pmRmRequest, session, rmNo);
+        return null;
+    }
     
 
     @GetMapping("/view/{no}")
@@ -125,4 +147,5 @@ public class PmController {
         System.out.println("debug >>> PmController GET /pmrm/nurse_list.slowstep");
         return new ResponseEntity<List<Map<String,String>>>(pmService.getNurseList(), HttpStatus.OK);
     }
+    
 }

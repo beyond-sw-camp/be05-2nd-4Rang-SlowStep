@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.675s</div>
+<div class="counter">0.002s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,13 +61,149 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+<li>
+<a href="#tab3">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="contextLoads()"></a>
+<h3 class="failures">contextLoads()</h3>
+<span class="code">
+<pre>java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@6723e6b3 testClass = com.example.slowstep_pjt.SlowstepPjtApplicationTests, locations = [], classes = [com.example.slowstep_pjt.SlowstepPjtApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceLocations = [], propertySourceProperties = [&quot;org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true&quot;], contextCustomizers = [org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@47f9738, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6138e79a, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@42bc14c1, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@77825085, org.springframework.boot.test.context.SpringBootTestAnnotation@4ed55d00], resourceBasePath = &quot;src/main/webapp&quot;, contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:143)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:127)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:241)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:377)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:382)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:377)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:376)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:289)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:288)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:278)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:277)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:105)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:104)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'pmController': Unsatisfied dependency expressed through field 'pmRmRequest': No qualifying bean of type 'com.example.slowstep_pjt.pm.domain.PmRmRequest' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:776)
+	at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:756)
+	at app//org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:497)
+	at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1414)
+	at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
+	at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at app//org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at app//org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at app//org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at app//org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at app//org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
+	at app//org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at app//org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at app//org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at app//org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
+	at app//org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+	at app//org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+	at app//org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1417)
+	at app//org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:546)
+	at app//org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
+	at app//org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
+	at app//org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:187)
+	at app//org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:119)
+	... 84 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.example.slowstep_pjt.pm.domain.PmRmRequest' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1824)
+	at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1383)
+	at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:773)
+	... 109 more
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -78,34 +214,54 @@
 </tr>
 </thead>
 <tr>
-<td class="success">contextLoads()</td>
-<td class="success">0.675s</td>
-<td class="success">passed</td>
+<td class="failures">contextLoads()</td>
+<td class="failures">0.002s</td>
+<td class="failures">failed</td>
 </tr>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>14:34:36.825 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.slowstep_pjt.SlowstepPjtApplicationTests]: SlowstepPjtApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:34:36.952 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.slowstep_pjt.SlowstepPjtApplication for test class com.example.slowstep_pjt.SlowstepPjtApplicationTests
-14:34:37,355 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [console]
-14:34:37,356 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
-14:34:37,360 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
-14:34:37,372 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [console-infolog] not referenced. Skipping further processing.
-14:34:37,373 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.example.encore_spring_pjt] to DEBUG
-14:34:37,373 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating DEBUG level on Logger[com.example.encore_spring_pjt] onto the JUL framework
-14:34:37,373 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.sqlonly] to INFO
-14:34:37,373 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating INFO level on Logger[jdbc.sqlonly] onto the JUL framework
-14:34:37,373 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.sqltiming] to DEBUG
-14:34:37,374 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating DEBUG level on Logger[jdbc.sqltiming] onto the JUL framework
-14:34:37,374 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.resultsettable] to INFO
-14:34:37,374 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating INFO level on Logger[jdbc.resultsettable] onto the JUL framework
-14:34:37,374 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to OFF
-14:34:37,374 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating OFF level on Logger[ROOT] onto the JUL framework
-14:34:37,374 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [console] to Logger[ROOT]
-14:34:37,374 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@7a344b65 - End of configuration.
-14:34:37,374 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@6b474074 - Registering current configuration as safe fallback point
+<pre>17:45:52.004 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.slowstep_pjt.SlowstepPjtApplicationTests]: SlowstepPjtApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:45:52.048 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.slowstep_pjt.SlowstepPjtApplication for test class com.example.slowstep_pjt.SlowstepPjtApplicationTests
+17:45:51,956 |-INFO in ch.qos.logback.classic.LoggerContext[default] - This is logback-classic version 1.4.14
+17:45:51,957 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 - Here is a list of configurators discovered as a service, by rank: 
+17:45:51,957 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 -   org.springframework.boot.logging.logback.RootLogLevelConfigurator
+17:45:51,957 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 - They will be invoked in order until ExecutionStatus.DO_NOT_INVOKE_NEXT_IF_ANY is returned.
+17:45:51,957 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 - Constructed configurator of type class org.springframework.boot.logging.logback.RootLogLevelConfigurator
+17:45:51,960 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 - org.springframework.boot.logging.logback.RootLogLevelConfigurator.configure() call lasted 0 milliseconds. ExecutionStatus=INVOKE_NEXT_IF_ANY
+17:45:51,960 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 - Trying to configure with ch.qos.logback.classic.joran.SerializedModelConfigurator
+17:45:51,960 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 - Constructed configurator of type class ch.qos.logback.classic.joran.SerializedModelConfigurator
+17:45:51,962 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.scmo]
+17:45:51,962 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.scmo]
+17:45:51,962 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 - ch.qos.logback.classic.joran.SerializedModelConfigurator.configure() call lasted 2 milliseconds. ExecutionStatus=INVOKE_NEXT_IF_ANY
+17:45:51,962 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+17:45:51,962 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+17:45:51,962 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+17:45:51,962 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.xml]
+17:45:51,962 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 0 milliseconds. ExecutionStatus=INVOKE_NEXT_IF_ANY
+17:45:51,962 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 - Trying to configure with ch.qos.logback.classic.BasicConfigurator
+17:45:51,963 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 - Constructed configurator of type class ch.qos.logback.classic.BasicConfigurator
+17:45:51,963 |-INFO in ch.qos.logback.classic.BasicConfigurator@7c8326a4 - Setting up default configuration.
+17:45:51,969 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1ee29c84 - ch.qos.logback.classic.BasicConfigurator.configure() call lasted 6 milliseconds. ExecutionStatus=NEUTRAL
+17:45:52,206 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [console]
+17:45:52,206 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+17:45:52,208 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+17:45:52,213 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [console-infolog] not referenced. Skipping further processing.
+17:45:52,214 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.example.encore_spring_pjt] to DEBUG
+17:45:52,214 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2d195ee4 - Propagating DEBUG level on Logger[com.example.encore_spring_pjt] onto the JUL framework
+17:45:52,214 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.sqlonly] to INFO
+17:45:52,214 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2d195ee4 - Propagating INFO level on Logger[jdbc.sqlonly] onto the JUL framework
+17:45:52,214 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.sqltiming] to DEBUG
+17:45:52,214 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2d195ee4 - Propagating DEBUG level on Logger[jdbc.sqltiming] onto the JUL framework
+17:45:52,214 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.resultsettable] to INFO
+17:45:52,214 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2d195ee4 - Propagating INFO level on Logger[jdbc.resultsettable] onto the JUL framework
+17:45:52,214 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to OFF
+17:45:52,214 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2d195ee4 - Propagating OFF level on Logger[ROOT] onto the JUL framework
+17:45:52,214 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [console] to Logger[ROOT]
+17:45:52,215 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@13a37e2a - End of configuration.
+17:45:52,215 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@1280851e - Registering current configuration as safe fallback point
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -115,18 +271,55 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::      (v3.1.10-SNAPSHOT)
 
-2024-03-26 14:34:38,857  INFO [jdbc.sqlonly] SELECT NOW() FROM DUAL ;
+2024-03-26 17:45:52,813  INFO [jdbc.sqlonly] SELECT NOW() FROM DUAL ;
 
-2024-03-26 14:34:38,869 DEBUG [jdbc.sqltiming]  com.zaxxer.hikari.pool.PoolBase.executeSql(PoolBase.java:578)
+2024-03-26 17:45:52,818 DEBUG [jdbc.sqltiming]  com.zaxxer.hikari.pool.PoolBase.executeSql(PoolBase.java:578)
 1. SELECT NOW() FROM DUAL ;
- {executed in 11 msec}
-2024-03-26 14:34:39,453  INFO [jdbc.sqlonly] SELECT @@character_set_database, @@sql_mode
+ {executed in 5 msec}
+2024-03-26 17:45:53,023  INFO [jdbc.sqlonly] SELECT @@character_set_database, @@sql_mode
 
-2024-03-26 14:34:39,454 DEBUG [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:110)
+2024-03-26 17:45:53,024 DEBUG [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:110)
 1. SELECT @@character_set_database, @@sql_mode
  {executed in 0 msec}
-&gt;&gt;&gt; debug
-org.mybatis.spring.SqlSessionTemplate@24cbf894
+</pre>
+</span>
+</div>
+<div id="tab3" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>
+
+
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
 </pre>
 </span>
 </div>
@@ -138,7 +331,7 @@ org.mybatis.spring.SqlSessionTemplate@24cbf894
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.6</a> at 2024. 3. 26. 오후 2:34:41</p>
+<a href="http://www.gradle.org">Gradle 8.6</a> at 2024. 3. 26. 오후 5:45:53</p>
 </div>
 </div>
 </body>
