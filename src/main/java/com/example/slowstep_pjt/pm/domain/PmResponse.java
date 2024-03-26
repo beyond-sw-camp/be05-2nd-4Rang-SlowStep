@@ -28,4 +28,5 @@ public class PmResponse {
     private Date    rdDt        ;
     private String  mbrNm       ;
     private String  mdPicDept   ;
+    private Integer mbrNo       ;
 }
