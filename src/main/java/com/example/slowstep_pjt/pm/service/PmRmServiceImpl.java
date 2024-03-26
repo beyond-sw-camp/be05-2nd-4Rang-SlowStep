@@ -21,4 +21,11 @@ public class PmRmServiceImpl implements PmRmService {
         Integer pmRmNo=pmRmMapper.findPmRmNo(params);
         return pmRmNo;
     }
+
+    @Transactional
+    @Override
+    public void savePmRmNo(PmRmRequest params) {
+        System.out.println("debug >>> PmRmService savePmRmNo");
+        pmRmMapper.savePmRmNo(params);
+    }
 }

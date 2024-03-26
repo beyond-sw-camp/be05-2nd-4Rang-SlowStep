@@ -15,4 +15,10 @@
             AND
             RN_NO=#{rnNo}
     </select>
+
+    <insert id="savePmRmNo"
+        parameterType="com.example.slowstep_pjt.pm.domain.PmRmRequest">
+        INSERT INTO PM_RM(MD_NO, RN_NO)
+        VALUES(#{mdNo},#{rnNo})
+    </insert>
 </mapper>
