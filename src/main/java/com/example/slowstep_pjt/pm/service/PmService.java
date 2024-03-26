@@ -16,4 +16,5 @@ public interface PmService {
     public void writePmCn(PmRequest params);
     public  List<Map<String, String>>    getDoctorList();
     public  List<Map<String, String>>    getNurseList();
+    public  Integer checkView(Integer doctorNo, Integer nurseNo);
 }

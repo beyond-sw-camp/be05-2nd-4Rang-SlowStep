@@ -93,4 +93,14 @@ public class PmServiceImpl implements PmService {
         }
         return info;
     }
+
+    @Override
+    public Integer checkView(Integer doctorNo, Integer nurseNo) {
+        Integer rmNo = pmMapper.checkView(doctorNo, nurseNo);
+        if(rmNo == null) {
+            pmMapper.createView(doctorNo, nurseNo);
+            rmNo = pmMapper.checkView(doctorNo, nurseNo);
+        }
+        return rmNo;
+    }
 }
