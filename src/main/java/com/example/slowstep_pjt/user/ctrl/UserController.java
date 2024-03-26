@@ -25,6 +25,8 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.util.*;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 @RequestMapping("/user")
@@ -37,7 +39,7 @@ public class UserController {
     
     @PostMapping("/login")
     @Operation(summary = "로그인 기능", description = "사용자가 저장된 DB를 통해 이메일과 비밀번호로 로그인 하는 기능") 
-    public ResponseEntity<UserDTO> login(@RequestParam("id") String id,
+    public ResponseEntity<UserDTO> login(@Valid @RequestParam("id") String id,
                         @RequestParam("pwd") String pwd,
                         HttpSession session,
                         RedirectAttributes attr) {
@@ -88,10 +90,45 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping("path")
-    @Operation(summary = "기능이름", description = "기능설명")
-    public String getMethodName(@RequestParam String param) {
-        return new String();
+
+    @PostMapping("/update")
+    @Operation(summary = "사용자 정보 업데이트", description = "사용자의 이메일, 전화번호, 비밀번호 등을 업데이트하는 기능")
+    public ResponseEntity<String> updateUserInfo(@Valid @RequestBody UserDTO userDTO, HttpSession session) {
+    // 세션에서 로그인 사용자 정보를 가져옴
+    UserDTO loginUser = (UserDTO) session.getAttribute("loginUser");
+    if (loginUser == null) {
+        return new ResponseEntity<>("사용자가 로그인하지 않았습니다.", HttpStatus.FORBIDDEN);
     }
+    userDTO.setMbrNo(loginUser.getMbrNo());
+    System.out.println(userDTO.toString());
+    System.out.println("debug >>> "+ loginUser.getMbrNm());
+    System.out.println("debug >>>>>" +userDTO.getMbrNm() );
+
+
+    // // 세션에 있는 사용자 번호(mbrNo)와 요청으로 받은 사용자의 번호가 일치하는지 확인
+    // if (!loginUser.getMbrNo().equals(userDTO.getMbrNo())) {
+    //     return new ResponseEntity<>("잘못된 사용자입니다.", HttpStatus.BAD_REQUEST);
+    // }
+
+    // 비밀번호 암호화 처리
+    if (userDTO.getMbrPwd() != null && !userDTO.getMbrPwd().isEmpty()) {
+        System.out.println("비밀번호 암호화 시작");
+        String encodedPassword = passwordEncoder.encode(userDTO.getMbrPwd());
+        System.out.println("비밀번호 암호화 종료 : " + encodedPassword);
+        userDTO.setMbrPwd(encodedPassword);
+        System.out.println("끝!!!");
+    }
+
+    try {
+        // 사용자 정보 업데이트 서비스 호출
+        userService.updateUserInfo(userDTO);
+        return new ResponseEntity<>("사용자 정보가 업데이트되었습니다.", HttpStatus.OK);
+    } catch (Exception e) {
+        e.printStackTrace();
+        return new ResponseEntity<>("사용자 정보 업데이트에 실패하였습니다.", HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+
+    
     
 }

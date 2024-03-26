@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.*;
 
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.stereotype.Service;
 
 
@@ -23,5 +24,16 @@ public class UserService {
     
     }
 
-  
+    // UserService.java
+
+
+// 사용자 정보 업데이트를 위한 메소드 추가
+public void updateUserInfo(UserDTO userDTO) {
+     System.out.println("Debug >>>> service updateService");
+     userMapper.updateUser(userDTO);
 }
+}
+
+
+
+  
