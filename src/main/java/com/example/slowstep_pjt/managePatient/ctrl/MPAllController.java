@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.slowstep_pjt.managePatient.domain.PT_HTH_INFO_DTO;
 import com.example.slowstep_pjt.managePatient.service.MPAllService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import java.util.List;
 import java.util.Map;
 
@@ -26,12 +29,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/all")
+@Tag(name = "Manage Patient Doctor Nurse", description = "의사 간호사 환자 관리 기능")
 public class MPAllController {
 
     @Autowired
     private MPAllService mpAllService;
 
     @GetMapping("/pt_hth_info/{ptNo}")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<List<PT_HTH_INFO_DTO>> getHealthInfo(@PathVariable("ptNo") Integer ptNo) {
 
         System.out.println("debug >> AllController getHealthInfo");
@@ -40,6 +45,7 @@ public class MPAllController {
     }
 
     @PostMapping("/post_pt_hth_info")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<String> postHealthInfo(@RequestBody PT_HTH_INFO_DTO postData) {
         
         System.out.println("debug >> AllController postHealthInfo");
@@ -50,6 +56,7 @@ public class MPAllController {
     }
 
     @GetMapping("/exam_info/{ptNo}")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<List<EXAM_INFO>> getExamInfo(@PathVariable("ptNo") Integer ptNo) {
 
         System.out.println("debug >> AllController getExamInfo");
@@ -58,6 +65,7 @@ public class MPAllController {
     }
 
     @GetMapping("/exam_info_detail/{ptNo}/{examNo}")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<EXAM_INFO> getExamInfoDetail(@PathVariable("ptNo") Integer ptNo, @PathVariable("examNo") Integer examNo) {
 
         System.out.println("debug >> AllController getExamInfoDetail/ptNo/examNo");
@@ -67,6 +75,7 @@ public class MPAllController {
 
 
     @GetMapping("/getDisInfo/{ptNo}")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<Map<String, String>> getDisInfo(@PathVariable("ptNo") Integer ptNo) {
 
         System.out.println("debug >> AllController getDisInfo/ptNo");
@@ -76,6 +85,7 @@ public class MPAllController {
     
     
     @GetMapping("/pt/{ptNo}")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<List<PT_DTO>> getPtInfo(@PathVariable("ptNo") Integer ptNo) {
 
         System.out.println("debug >> AllController getPtInfo");
@@ -84,6 +94,7 @@ public class MPAllController {
     }
 
     @GetMapping("/ad_drug_info")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<List<AD_DRUG_INFO_DTO>> getDrugInfo() {
 
         System.out.println("debug >> AllController getPtInfo");
@@ -92,6 +103,7 @@ public class MPAllController {
     }
 
     @PostMapping("/post_ad_drug_info")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<String> postDrugInfo(@RequestBody AD_DRUG_INFO_DTO drugData) {
 
         System.out.println("debug >> MPDoctorController postExamInfo");

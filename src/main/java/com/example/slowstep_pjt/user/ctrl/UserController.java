@@ -11,27 +11,32 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 import com.example.slowstep_pjt.user.domain.UserDTO;
 import com.example.slowstep_pjt.user.service.UserService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.util.*;
 
-@Controller
+@RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor
+@Tag(name = "User", description = "계정")
 public class UserController {
 
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;
     
-    @PostMapping("/login") 
+    @PostMapping("/login")
+    @Operation(summary = "기능이름", description = "기능설명") 
     public ResponseEntity<UserDTO> login(@RequestParam("id") String id,
                         @RequestParam("pwd") String pwd,
                         HttpSession session,
@@ -75,6 +80,7 @@ public class UserController {
 
 
     @GetMapping("/logout")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<String> logout(HttpSession session) {
         System.out.println("debug UserController client path/user/logout");
 

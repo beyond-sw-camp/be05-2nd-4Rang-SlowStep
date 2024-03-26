@@ -11,15 +11,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.slowstep_pjt.managePatient.service.MPDoctorService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 
 @RestController
 @RequestMapping("/doctor")
+@Tag(name = "Manage Patient Doctor", description = "의사 환자 관리 기능")
 public class MPDoctorController {
 
     @Autowired
     private MPDoctorService mpDoctorService;
 
     @PostMapping("/post_exam_info")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<String> postExamInfo(@RequestBody EXAM_INFO postData) {
 
         System.out.println("debug >> MPDoctorController postExamInfo");

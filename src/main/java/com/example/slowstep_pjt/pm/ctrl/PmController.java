@@ -22,15 +22,19 @@ import com.example.slowstep_pjt.pm.service.PmRmService;
 import com.example.slowstep_pjt.pm.service.PmService;
 import com.example.slowstep_pjt.user.domain.UserDTO;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 
 
-@Controller
+@RestController
 @RequestMapping("/pmrm")
+@Tag(name = "쪽지", description = "의사와 간호사간 환자관리를 위한 쪽지")
 public class PmController {
     
     @Autowired
@@ -39,6 +43,7 @@ public class PmController {
     private PmService   pmService   ;
 
     @GetMapping("/view/{rnNo}")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<List<PmResponse>> view(PmRmRequest params, HttpSession session, @PathVariable("rnNo") Integer rnNo){
         // 디버깅을 위한 더미값 할당
         UserDTO userResponse   = (UserDTO) session.getAttribute("loginUser");
@@ -55,6 +60,7 @@ public class PmController {
     }
 
     @PostMapping("/write.slowstep")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<String> write(@RequestBody PmRequest params, Model model) {
         System.out.println("debug >>> PmController write POST /pmrm/write.slowstep");
         pmService.writePmCn(params);
@@ -63,6 +69,7 @@ public class PmController {
     
 
     @DeleteMapping("/delete/{targetIdx}")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<String> delete(@PathVariable("targetIdx") Integer targetIdx){
         // 디버깅을 위한 더미값 할당
         System.out.println("debug >>> Delete Path /pmrm/delete.slowstep");
@@ -72,6 +79,7 @@ public class PmController {
     }
 
     @GetMapping("/getDetailByPmNo/{targetIdx}")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<Object> getDetailByPmNo(@PathVariable("targetIdx") Integer targetIdx) {
         // 디버깅을 위한 더미값 할당
         PmResponse  response    = pmService.getDetailByPmNo(targetIdx);
@@ -85,12 +93,14 @@ public class PmController {
     }
 
     @GetMapping("/doctor_list.slowstep")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<Map<String, String>>getDoctorList() {
         System.out.println("debug >>> PmController GET /pmrm/doctor_list.slowstep");
         return new ResponseEntity<Map<String, String>>(pmService.getDoctorList(), HttpStatus.OK);
     }
 
     @GetMapping("/nurse_list.slowstep")
+    @Operation(summary = "기능이름", description = "기능설명")
     public ResponseEntity<Map<String, String>>getNurseList() {
         System.out.println("debug >>> PmController GET /pmrm/nurse_list.slowstep");
         return new ResponseEntity<Map<String,String>>(pmService.getNurseList(), HttpStatus.OK);
