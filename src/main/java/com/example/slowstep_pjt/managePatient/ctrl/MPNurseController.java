@@ -25,7 +25,7 @@ public class MPNurseController {
     private MPNurseService mpNurseService;
 
     @GetMapping("/exam_info_NM/{ptNo}")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "진료 담당의 확인", description = "간호사가 환자의 진료 담당의를 확인하는 API")
     public ResponseEntity<EXAM_INFO> getExamInfoNM(@PathVariable("ptNo") Integer examNo) {
 
         System.out.println("debug >> NurseController getExamInfoNM");

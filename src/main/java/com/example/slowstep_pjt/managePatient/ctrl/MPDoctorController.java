@@ -24,7 +24,11 @@ public class MPDoctorController {
     private MPDoctorService mpDoctorService;
 
     @PostMapping("/post_exam_info")
+<<<<<<< Updated upstream
     @Operation(summary = "의사 진료 작성", description = "의사가 진료 정보를 작성하는 API ")
+=======
+    @Operation(summary = "진료 등록", description = "의사가 관리하는 환자의 처방 정보를 등록하는 API")
+>>>>>>> Stashed changes
     public ResponseEntity<String> postExamInfo(@RequestBody EXAM_INFO postData) {
 
         System.out.println("debug >> MPDoctorController postExamInfo");
