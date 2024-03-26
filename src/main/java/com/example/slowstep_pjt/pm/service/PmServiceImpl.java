@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 import com.example.slowstep_pjt.pm.domain.PmRequest;
 import com.example.slowstep_pjt.pm.domain.PmResponse;
 import com.example.slowstep_pjt.pm.mapper.PmMapper;
+import com.example.slowstep_pjt.user.domain.UserDTO;
 
+import jakarta.servlet.http.HttpSession;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
@@ -39,13 +41,18 @@ public class PmServiceImpl implements PmService {
     
     @Transactional
     @Override
-    public PmResponse getDetailByPmNo(Integer pmNo) {
+    public PmResponse getDetailByPmNo(Integer pmNo, HttpSession session) {
         System.out.println("debug >>> service viewDetails ");
         PmResponse  response    = pmMapper.findByPmNo(pmNo);
-        String deleteYn   = response.getDeleteYn();
-        if (deleteYn == "0"){
-            pmMapper.updateRdYn(pmNo);
-            return response;
+        String      deleteYn    = response.getDeleteYn();
+
+        if (deleteYn.equals("0")){
+            UserDTO userResponse = (UserDTO) session.getAttribute("loginUser");
+            if ((response.getTrsmDir().equals("1") && userResponse.getJobTyp()=='N')
+                || (response.getTrsmDir().equals("0") && userResponse.getJobTyp()=='D')){
+                pmMapper.updateRdYn(pmNo);
+            }
+            return pmMapper.findByPmNo(pmNo);
         } else {
             return null;
         }
