@@ -24,7 +24,7 @@ public class MPDoctorController {
     private MPDoctorService mpDoctorService;
 
     @PostMapping("/post_exam_info")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "의사 진료 작성", description = "의사가 진료 정보를 작성하는 API ")
     public ResponseEntity<String> postExamInfo(@RequestBody EXAM_INFO postData) {
 
         System.out.println("debug >> MPDoctorController postExamInfo");

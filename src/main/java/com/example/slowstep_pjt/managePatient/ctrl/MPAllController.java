@@ -85,7 +85,7 @@ public class MPAllController {
     
     
     @GetMapping("/pt/{ptNo}")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "환자 정보 조회", description = "등록된 환자 번호로 환자 정보를 조회하는 API")
     public ResponseEntity<List<PT_DTO>> getPtInfo(@PathVariable("ptNo") Integer ptNo) {
 
         System.out.println("debug >> AllController getPtInfo");
@@ -94,7 +94,7 @@ public class MPAllController {
     }
 
     @GetMapping("/ad_drug_info")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "복용 약물 조회", description = "의사, 간호사가 환자의 복용 약물을 조회하는 API")
     public ResponseEntity<List<AD_DRUG_INFO_DTO>> getDrugInfo() {
 
         System.out.println("debug >> AllController getPtInfo");
@@ -103,7 +103,7 @@ public class MPAllController {
     }
 
     @PostMapping("/post_ad_drug_info")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "복용 약물 등록", description = "의사, 간호사가 복용 약물 정보를 등록하는 API")
     public ResponseEntity<String> postDrugInfo(@RequestBody AD_DRUG_INFO_DTO drugData) {
 
         System.out.println("debug >> MPDoctorController postExamInfo");
