@@ -36,7 +36,7 @@ public class MPAllController {
     private MPAllService mpAllService;
 
     @GetMapping("/pt_hth_info/{ptNo}")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "환자 건강 정보 확인", description = "환자의 혈압, 혈당, 체중, 심박수 등의 건강정보를 확인하는 API")
     public ResponseEntity<List<PT_HTH_INFO_DTO>> getHealthInfo(@PathVariable("ptNo") Integer ptNo) {
 
         System.out.println("debug >> AllController getHealthInfo");
@@ -45,7 +45,7 @@ public class MPAllController {
     }
 
     @PostMapping("/post_pt_hth_info")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "환자 건강 정보 등록", description = "의사와 간호사가 관리하는 환자의 건강 정보를 등록하는 API")
     public ResponseEntity<String> postHealthInfo(@RequestBody PT_HTH_INFO_DTO postData) {
         
         System.out.println("debug >> AllController postHealthInfo");
@@ -56,7 +56,7 @@ public class MPAllController {
     }
 
     @GetMapping("/exam_info/{ptNo}")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "진료 차트 확인", description = "의사와 간호사가 환자의 진료 차트를 확인하는 API")
     public ResponseEntity<List<EXAM_INFO>> getExamInfo(@PathVariable("ptNo") Integer ptNo) {
 
         System.out.println("debug >> AllController getExamInfo");
@@ -65,7 +65,7 @@ public class MPAllController {
     }
 
     @GetMapping("/exam_info_detail/{ptNo}/{examNo}")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "진료 정보 확인", description = "의사와 간호사가 환자의 진료 상세 정보를 확인하는 API")
     public ResponseEntity<EXAM_INFO> getExamInfoDetail(@PathVariable("ptNo") Integer ptNo, @PathVariable("examNo") Integer examNo) {
 
         System.out.println("debug >> AllController getExamInfoDetail/ptNo/examNo");
@@ -75,7 +75,7 @@ public class MPAllController {
 
 
     @GetMapping("/getDisInfo/{ptNo}")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "질병 이력 조회", description = "의사와 간호사가 환자의 질병 이록을 확인하는 API")
     public ResponseEntity<Map<String, String>> getDisInfo(@PathVariable("ptNo") Integer ptNo) {
 
         System.out.println("debug >> AllController getDisInfo/ptNo");
