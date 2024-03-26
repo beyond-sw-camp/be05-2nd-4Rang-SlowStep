@@ -36,7 +36,7 @@ public class UserController {
     private final PasswordEncoder passwordEncoder;
     
     @PostMapping("/login")
-    @Operation(summary = "기능이름", description = "기능설명") 
+    @Operation(summary = "로그인 기능", description = "사용자가 저장된 DB를 통해 이메일과 비밀번호로 로그인 하는 기능") 
     public ResponseEntity<UserDTO> login(@RequestParam("id") String id,
                         @RequestParam("pwd") String pwd,
                         HttpSession session,
@@ -80,11 +80,18 @@ public class UserController {
 
 
     @GetMapping("/logout")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "로그아웃 기능", description = "사용자가 세션에 있는 정보를 제거해서 로그아웃 하는 기능")
     public ResponseEntity<String> logout(HttpSession session) {
         System.out.println("debug UserController client path/user/logout");
 
         session.invalidate();
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("path")
+    @Operation(summary = "기능이름", description = "기능설명")
+    public String getMethodName(@RequestParam String param) {
+        return new String();
+    }
+    
 }
