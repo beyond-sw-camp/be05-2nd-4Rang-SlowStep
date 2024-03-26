@@ -22,10 +22,6 @@
 
 
 ## 4. 요구사항 명세서
-<kbd>
-<img width="695" alt="image" src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/42a3854c-9d15-4adf-a8ed-7ec1bb34d188"
-style="border: 20px solid black;">
-</ kbd>
 
 <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/42a3854c-9d15-4adf-a8ed-7ec1bb34d188" alt="요구사항 명세서" style='border-radius: 100px;'>
 
@@ -38,7 +34,17 @@ style="border: 20px solid black;">
 ## 7. 테스트
 <details>
 <summary>공동 환자관리</summary>
-<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/14d7e139-41a4-4c67-9f32-719fae2c794a" alt="환자 정보 조회" style='border-radius: 100px;'>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/14d7e139-41a4-4c67-9f32-719fae2c794a" alt="환자 정보 조회" style='border-radius: 100px;'>
+  <br>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/2708c268-c914-4a29-a2e0-41678a8fc3be" alt="복용 약물 조회" style='border-radius: 100px;'>
+</details>
+
+<br>
+
+<details>
+<summary>의사 환자관리</summary>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/ef1e7130-1e6d-44bb-a72b-a97804587107" alt="진료 정보 조회" style='border-radius: 100px;'>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/5ebdb3c8-ed50-4f23-a097-7c9afb5f308b" alt="진료 정보 등록" style='border-radius: 100px;'>
 </details>
 
 
