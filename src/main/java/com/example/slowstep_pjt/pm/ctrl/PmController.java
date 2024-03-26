@@ -45,6 +45,8 @@ public class PmController {
     @Autowired
     private PmService   pmService   ;
 
+    
+
     @GetMapping("/view/{no}")
     @Operation(summary = "쪽지내역 열람", description = "로그인된 세션의 유저와, 유저가 선택한 간호사의 번호로부터 두 사용자간 주고받은 쪽지내역을 출력합니다.")
     public ResponseEntity<List<Map<String, String>>> view(PmRmRequest params, HttpSession session, @PathVariable("no") Integer no) {
@@ -68,15 +70,13 @@ public class PmController {
             map.put("PM_RM_NO", Integer.toString(response.getPmRmNo()));
             map.put("PM_CN", response.getPmCn());
             map.put("TRSM_DIR", response.getTrsmDir());
-            map.put("PM_DSPTCH_DT", response.getPmDsptchDt() != null ? format.format(response.getPmDsptchDt()) : null);
+            map.put("PM_DSPTCH_DT", format.format(response.getPmDsptchDt()));
             map.put("RD_YN", response.getRdYn());
-            map.put("RD_DT", response.getRdDt() != null ? format.format(response.getRdDt()) : null);
+            map.put("RD_DT", format.format(response.getRdDt()));
             resultList.add(map);
         }
-        
         return new ResponseEntity<>(resultList, HttpStatus.OK);
     }
-    
     
 
     @PostMapping("/write.slowstep")
@@ -100,7 +100,7 @@ public class PmController {
 
     @GetMapping("/getDetailByPmNo/{targetIdx}")
     @Operation(summary = "쪽지 세부내용 열람", description = "사용자가 선택한 쪽지의 쪽지번호(pmRm)으로부터 해당 쪽지의 세부내용을 출력합니다.")
-    public ResponseEntity<Object> getDetailByPmNo(HttpSession session, @PathVariable("targetIdx") Integer targetIdx) {
+    public ResponseEntity<Object> getDetailByPmNo(@PathVariable("targetIdx") Integer targetIdx, HttpSession session) {
         // 디버깅을 위한 더미값 할당
         PmResponse  response    = pmService.getDetailByPmNo(targetIdx, session);
         if (response == null){

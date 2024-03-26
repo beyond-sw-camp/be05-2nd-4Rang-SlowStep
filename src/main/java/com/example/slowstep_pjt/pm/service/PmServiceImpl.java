@@ -71,6 +71,7 @@ public class PmServiceImpl implements PmService {
         List<PmResponse> lst = pmMapper.getDoctorList();
         for(PmResponse some : lst) {
             Map<String, String> map = new HashMap<>();
+            map.put("MBR_NO", some.getMbrNo().toString());
             map.put("name", some.getMbrNm());
             map.put("dept", some.getMdPicDept());
             info.add(map);
@@ -86,7 +87,8 @@ public class PmServiceImpl implements PmService {
         List<PmResponse> lst = pmMapper.getNurseList();
         for(PmResponse some : lst) {
             Map<String, String> map = new HashMap<>();
-            map.put("name", some.getMbrNm());
+            map.put("MBR_NM", some.getMbrNm());
+            map.put("MBR_NO", some.getMbrNo().toString());
             info.add(map);
         }
         return info;
