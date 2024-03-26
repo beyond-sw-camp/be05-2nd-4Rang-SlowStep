@@ -23,7 +23,7 @@
 
 ## 4. 요구사항 명세서
 ![image](https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/42a3854c-9d15-4adf-a8ed-7ec1bb34d188)
-<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/42a3854c-9d15-4adf-a8ed-7ec1bb34d188" alt="요구사항 명세서" style="border-radius: 10px;">
+<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/42a3854c-9d15-4adf-a8ed-7ec1bb34d188" alt="요구사항 명세서" style="border-radius: 100px;">
 
 ## 5. 기능 명세서
 
@@ -34,7 +34,7 @@
 ## 7. 테스트
 <details>
 <summary>공동 환자관리</summary>
-<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/14d7e139-41a4-4c67-9f32-719fae2c794a" alt="환자 정보 조회" style="border-radius: 10px;">
+<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/14d7e139-41a4-4c67-9f32-719fae2c794a" alt="환자 정보 조회" style="border-radius: 100px;">
 </details>
 
 
