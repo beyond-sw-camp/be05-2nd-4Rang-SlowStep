@@ -68,13 +68,15 @@ public class PmController {
             map.put("PM_RM_NO", Integer.toString(response.getPmRmNo()));
             map.put("PM_CN", response.getPmCn());
             map.put("TRSM_DIR", response.getTrsmDir());
-            map.put("PM_DSPTCH_DT", format.format(response.getPmDsptchDt()));
+            map.put("PM_DSPTCH_DT", response.getPmDsptchDt() != null ? format.format(response.getPmDsptchDt()) : null);
             map.put("RD_YN", response.getRdYn());
-            map.put("RD_DT", format.format(response.getRdDt()));
+            map.put("RD_DT", response.getRdDt() != null ? format.format(response.getRdDt()) : null);
             resultList.add(map);
         }
+        
         return new ResponseEntity<>(resultList, HttpStatus.OK);
     }
+    
     
 
     @PostMapping("/write.slowstep")
@@ -98,9 +100,9 @@ public class PmController {
 
     @GetMapping("/getDetailByPmNo/{targetIdx}")
     @Operation(summary = "쪽지 세부내용 열람", description = "사용자가 선택한 쪽지의 쪽지번호(pmRm)으로부터 해당 쪽지의 세부내용을 출력합니다.")
-    public ResponseEntity<Object> getDetailByPmNo(@PathVariable("targetIdx") Integer targetIdx) {
+    public ResponseEntity<Object> getDetailByPmNo(HttpSession session, @PathVariable("targetIdx") Integer targetIdx) {
         // 디버깅을 위한 더미값 할당
-        PmResponse  response    = pmService.getDetailByPmNo(targetIdx);
+        PmResponse  response    = pmService.getDetailByPmNo(targetIdx, session);
         if (response == null){
             System.out.println("debug >>>>> 삭제된 게시글입니다.");
             return new ResponseEntity<>("삭제된 게시글입니다.", HttpStatus.OK);
