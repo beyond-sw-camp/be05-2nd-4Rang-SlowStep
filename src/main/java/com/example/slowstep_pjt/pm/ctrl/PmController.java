@@ -1,8 +1,11 @@
 package com.example.slowstep_pjt.pm.ctrl;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -43,8 +46,8 @@ public class PmController {
     private PmService   pmService   ;
 
     @GetMapping("/view/{no}")
-    @Operation(summary = "기능이름", description = "기능설명")
-    public ResponseEntity<List<PmResponse>> view(PmRmRequest params, HttpSession session, @PathVariable("no") Integer no){
+    @Operation(summary = "쪽지내역 열람", description = "로그인된 세션의 유저와, 유저가 선택한 간호사의 번호로부터 두 사용자간 주고받은 쪽지내역을 출력합니다.")
+    public ResponseEntity<Map<String, String>> view(PmRmRequest params, HttpSession session, @PathVariable("no") Integer no){
         // 디버깅을 위한 더미값 할당
         UserDTO userResponse   = (UserDTO) session.getAttribute("loginUser");
         if (userResponse.getJobTyp()=='D'){
@@ -58,10 +61,17 @@ public class PmController {
         System.out.println("debug >>> Get Path /pmrm/view.slowstep");
         Integer pmRmNo=pmRmservice.findPmRmNo(params);  // 여기가 문제.
         List<PmResponse>    lst = pmService.findAllPm(pmRmNo);
+        Map<String,String> map  = new HashMap<>();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         for(PmResponse response:lst){
-            System.out.println(response.toString());
+            map.put("PM_NO", Integer.toString(response.getPmNo()));
+            map.put("PM_RM_NO", Integer.toString(response.getPmRmNo()));
+            map.put("PM_CN", response.getPmCn());
+            map.put("PM_DSPTCH_DT", format.format(response.getPmDsptchDt()));
+            map.put("RD_YN", response.getRdYn());
+            map.put("RD_DT", format.format(response.getRdDt()));
         }
-        return new ResponseEntity<>(lst, HttpStatus.OK);
+        return new ResponseEntity<>(map, HttpStatus.OK);
     }
 
     @PostMapping("/write.slowstep")
@@ -74,7 +84,7 @@ public class PmController {
     
 
     @DeleteMapping("/delete/{targetIdx}")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "선택 쪽지 삭제", description = "사용자가 선택한 쪽지의 쪽지번호(pmRm)로부터 해당 쪽지를 삭제합니다.")
     public ResponseEntity<String> delete(@PathVariable("targetIdx") Integer targetIdx){
         // 디버깅을 위한 더미값 할당
         System.out.println("debug >>> Delete Path /pmrm/delete.slowstep");
@@ -84,7 +94,7 @@ public class PmController {
     }
 
     @GetMapping("/getDetailByPmNo/{targetIdx}")
-    @Operation(summary = "기능이름", description = "기능설명")
+    @Operation(summary = "쪽지 세부내용 열람", description = "사용자가 선택한 쪽지의 쪽지번호(pmRm)으로부터 해당 쪽지의 세부내용을 출력합니다.")
     public ResponseEntity<Object> getDetailByPmNo(@PathVariable("targetIdx") Integer targetIdx) {
         // 디버깅을 위한 더미값 할당
         PmResponse  response    = pmService.getDetailByPmNo(targetIdx);

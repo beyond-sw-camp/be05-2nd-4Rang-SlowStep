@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.slowstep_pjt.SlowstepPjtApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-03-26T03:26:50" hostname="DESKTOP-ODLC1MT" time="0.771">
+<testsuite name="com.example.slowstep_pjt.SlowstepPjtApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-03-26T05:34:41" hostname="DESKTOP-DJ641TU" time="0.675">
   <properties/>
-  <testcase name="contextLoads()" classname="com.example.slowstep_pjt.SlowstepPjtApplicationTests" time="0.771"/>
-  <system-out><![CDATA[12:26:46.112 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.slowstep_pjt.SlowstepPjtApplicationTests]: SlowstepPjtApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-12:26:46.231 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.slowstep_pjt.SlowstepPjtApplication for test class com.example.slowstep_pjt.SlowstepPjtApplicationTests
-12:26:46,646 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [console]
-12:26:46,646 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
-12:26:46,649 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
-12:26:46,664 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [console-infolog] not referenced. Skipping further processing.
-12:26:46,665 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.example.encore_spring_pjt] to DEBUG
-12:26:46,665 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating DEBUG level on Logger[com.example.encore_spring_pjt] onto the JUL framework
-12:26:46,666 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.sqlonly] to INFO
-12:26:46,666 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating INFO level on Logger[jdbc.sqlonly] onto the JUL framework
-12:26:46,666 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.sqltiming] to DEBUG
-12:26:46,666 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating DEBUG level on Logger[jdbc.sqltiming] onto the JUL framework
-12:26:46,666 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.resultsettable] to INFO
-12:26:46,666 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating INFO level on Logger[jdbc.resultsettable] onto the JUL framework
-12:26:46,666 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to OFF
-12:26:46,667 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating OFF level on Logger[ROOT] onto the JUL framework
-12:26:46,667 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [console] to Logger[ROOT]
-12:26:46,667 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@7a344b65 - End of configuration.
-12:26:46,667 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@6b474074 - Registering current configuration as safe fallback point
+  <testcase name="contextLoads()" classname="com.example.slowstep_pjt.SlowstepPjtApplicationTests" time="0.675"/>
+  <system-out><![CDATA[14:34:36.825 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.slowstep_pjt.SlowstepPjtApplicationTests]: SlowstepPjtApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:34:36.952 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.slowstep_pjt.SlowstepPjtApplication for test class com.example.slowstep_pjt.SlowstepPjtApplicationTests
+14:34:37,355 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [console]
+14:34:37,356 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+14:34:37,360 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+14:34:37,372 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [console-infolog] not referenced. Skipping further processing.
+14:34:37,373 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.example.encore_spring_pjt] to DEBUG
+14:34:37,373 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating DEBUG level on Logger[com.example.encore_spring_pjt] onto the JUL framework
+14:34:37,373 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.sqlonly] to INFO
+14:34:37,373 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating INFO level on Logger[jdbc.sqlonly] onto the JUL framework
+14:34:37,373 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.sqltiming] to DEBUG
+14:34:37,374 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating DEBUG level on Logger[jdbc.sqltiming] onto the JUL framework
+14:34:37,374 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdbc.resultsettable] to INFO
+14:34:37,374 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating INFO level on Logger[jdbc.resultsettable] onto the JUL framework
+14:34:37,374 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to OFF
+14:34:37,374 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@185f7840 - Propagating OFF level on Logger[ROOT] onto the JUL framework
+14:34:37,374 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [console] to Logger[ROOT]
+14:34:37,374 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@7a344b65 - End of configuration.
+14:34:37,374 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@6b474074 - Registering current configuration as safe fallback point
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -30,18 +30,18 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::      (v3.1.10-SNAPSHOT)
 
-2024-03-26 12:26:48,289  INFO [jdbc.sqlonly] SELECT NOW() FROM DUAL ;
+2024-03-26 14:34:38,857  INFO [jdbc.sqlonly] SELECT NOW() FROM DUAL ;
 
-2024-03-26 12:26:48,302 DEBUG [jdbc.sqltiming]  com.zaxxer.hikari.pool.PoolBase.executeSql(PoolBase.java:578)
+2024-03-26 14:34:38,869 DEBUG [jdbc.sqltiming]  com.zaxxer.hikari.pool.PoolBase.executeSql(PoolBase.java:578)
 1. SELECT NOW() FROM DUAL ;
- {executed in 12 msec}
-2024-03-26 12:26:48,918  INFO [jdbc.sqlonly] SELECT @@character_set_database, @@sql_mode
+ {executed in 11 msec}
+2024-03-26 14:34:39,453  INFO [jdbc.sqlonly] SELECT @@character_set_database, @@sql_mode
 
-2024-03-26 12:26:48,919 DEBUG [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:110)
+2024-03-26 14:34:39,454 DEBUG [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:110)
 1. SELECT @@character_set_database, @@sql_mode
  {executed in 0 msec}
 >>> debug
-org.mybatis.spring.SqlSessionTemplate@6109d880
+org.mybatis.spring.SqlSessionTemplate@24cbf894
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
