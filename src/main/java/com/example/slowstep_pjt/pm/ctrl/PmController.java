@@ -2,6 +2,7 @@ package com.example.slowstep_pjt.pm.ctrl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -84,14 +85,14 @@ public class PmController {
     }
 
     @GetMapping("/doctor_list.slowstep")
-    public ResponseEntity<List<PmResponse>>getDoctorList() {
+    public ResponseEntity<Map<String, String>>getDoctorList() {
         System.out.println("debug >>> PmController GET /pmrm/doctor_list.slowstep");
-        return new ResponseEntity<List<PmResponse>>(pmService.getDoctorList(), HttpStatus.OK);
+        return new ResponseEntity<Map<String, String>>(pmService.getDoctorList(), HttpStatus.OK);
     }
 
     @GetMapping("/nurse_list.slowstep")
-    public ResponseEntity<List<PmResponse>>getNurseList() {
+    public ResponseEntity<Map<String, String>>getNurseList() {
         System.out.println("debug >>> PmController GET /pmrm/nurse_list.slowstep");
-        return new ResponseEntity<List<PmResponse>>(pmService.getNurseList(), HttpStatus.OK);
+        return new ResponseEntity<Map<String,String>>(pmService.getNurseList(), HttpStatus.OK);
     }
 }

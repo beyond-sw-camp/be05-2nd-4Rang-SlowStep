@@ -32,7 +32,7 @@ public class UserController {
     private final PasswordEncoder passwordEncoder;
     
     @PostMapping("/login") 
-    public String login(@RequestParam("id") String id,
+    public ResponseEntity<UserDTO> login(@RequestParam("id") String id,
                         @RequestParam("pwd") String pwd,
                         HttpSession session,
                         RedirectAttributes attr) {
@@ -53,23 +53,23 @@ public class UserController {
                 // 사용자의 직업 유형에 따라 다른 홈페이지로 리다이렉트
                 if (response.getJobTyp() == 'D') {
                     System.out.println("의사입니다!");
-                    return "redirect:/doctor_home";
+                    return new ResponseEntity<> (response, HttpStatus.OK);
                 } else if (response.getJobTyp() == 'N') {
                     System.out.println("간호사입니다!");
-                    return "redirect:/nurse_home";
+                    return new ResponseEntity<> (response, HttpStatus.OK);
                 } else {
                     // 기타 직업 유형에 따른 처리
-                    return "redirect:/login";
+                    return new ResponseEntity<> (response, HttpStatus.OK);
                 }
             } else {
                 System.out.println("debug>>>비밀번호가 일치하지 않습니다");
                 attr.addFlashAttribute("failMsg", "비밀번호가 일치하지 않습니다");
-                return "redirect:/login";
+                return new ResponseEntity<> (response, HttpStatus.OK);
             }
         } else {
             System.out.println("debug>>>아이디가 일치하지 않습니다");
             attr.addFlashAttribute("failMsg", "아이디가 일치하지 않습니다");
-            return "redirect:/login";
+            return new ResponseEntity<> (response, HttpStatus.OK);
         }
     }
 
