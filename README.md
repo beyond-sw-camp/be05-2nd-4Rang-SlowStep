@@ -1,9 +1,7 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=75bdc2&height=120&section=footer&text=느린걸음&fontSize=50"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=75bdc2&height=120&section=footer&text=느린걸음🏥&fontSize=50&fontColor=13334b"/>
+<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/323f40b0-4830-4c0a-b5f7-9478e0068db7" width="850" height="650" align="center">
 
-<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/23557808-48da-486c-8302-1baa70ea0eb7" width="850" height="600" align="center">
-
-
-## 목차
+## 목차 📄
   [1. 프로젝트 소개](#1-프로젝트-소개)<br>
   [2. 팀원 소개](#2-팀원-소개)<br>
   [3. 사용 기술](#3-사용-기술)<br>
