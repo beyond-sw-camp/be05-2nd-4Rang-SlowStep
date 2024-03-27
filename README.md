@@ -1,7 +1,6 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=75bdc2&height=120&section=footer&text=느린걸음&fontSize=50"/>
 
-<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/156383201/ba6bf447-5c5e-49a1-b1f9-bbc0738816ee"/>
-![image (1)](https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/156383201/ba6bf447-5c5e-49a1-b1f9-bbc0738816ee)
+<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/23557808-48da-486c-8302-1baa70ea0eb7" width="850" height="600" align="center">
 
 
 ## 목차
