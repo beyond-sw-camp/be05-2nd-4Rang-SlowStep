@@ -53,6 +53,10 @@
 
 ## 6. DB설계와 DB명세서
 <details>
+<summary>ERD</summary>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/156383201/16238c24-7593-4697-b41d-9f9c8be5f678" alt="환자 정보 조회" style='border-radius: 100px;'>
+</details>
+<details> 
 <summary>DB설계서</summary>
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/156383201/eb5d3a27-eebe-4f0b-9da1-6dc551610206" alt="환자 정보 조회" style='border-radius: 100px;'>
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/156383201/06a6f4bc-aadd-40af-868c-69e51f07a92b" alt="환자 정보 조회" style='border-radius: 100px;'>
