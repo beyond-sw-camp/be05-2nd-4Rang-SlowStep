@@ -17,9 +17,9 @@
 
 
 ## 2. 팀원 소개
-|<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/79ecba6a-96ea-4711-a641-90d7a171d415" width="150" height="150"/>|<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/bed37d0a-ab59-47d8-921a-8f2c3aa34ca9" width="150" height="150"/>|<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/facd74e6-cf7a-4803-99b3-bcd3436ad833" width="150" height="150"/>|<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/6fd97fbe-b661-4163-8423-c468c0bbb175" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/114909535?v=4" width="150" height="150"/>|
+|<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/79ecba6a-96ea-4711-a641-90d7a171d415" width="150" height="150"/>|<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/bed37d0a-ab59-47d8-921a-8f2c3aa34ca9" width="150" height="150"/>|<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/facd74e6-cf7a-4803-99b3-bcd3436ad833" width="150" height="150"/>|<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/6fd97fbe-b661-4163-8423-c468c0bbb175" width="150" height="150"/>|<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/613004ee-fe1a-42f3-8976-bc37feab3526" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|:-:|
-|WARDKEY<br/>[@WARDKEY](https://github.com/WARDKEY)|설화<br/>[@Noononda](https://github.com/Noononda)|Bak hyegyeong<br/>[@BakHyegyeong](https://github.com/BakHyegyeong)|[@jeonghwangyeop](https://github.com/jeonghwangyeop)|Kwnag su Jeong<br/>[@Jrhkdtn](https://github.com/Jrhkdtn)|
+|근엽🤔<br/>[@WARDKEY](https://github.com/WARDKEY)|설화😘<br/>[@Noononda](https://github.com/Noononda)|혜경😲<br/>[@BakHyegyeong](https://github.com/BakHyegyeong)|황엽😎<br/>[@jeonghwangyeop](https://github.com/jeonghwangyeop)|광수😄<br/>[@Jrhkdtn](https://github.com/Jrhkdtn)|
 
 ## 3. 사용 기술
 <div align="center">
