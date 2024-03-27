@@ -54,7 +54,7 @@
 
 ## 5. 기능 명세서
 
-  [기능명세서](https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/files/14768307/03.27.11.09.pdf)
+  [기능명세서](https://docs.google.com/viewer?url=https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/files/14768307/03.27.11.09.pdf)
 
 
 ## 6. 아키텍처
