@@ -1,5 +1,5 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=75bdc2&height=120&section=footer&text=느린걸음&fontSize=50"/>
-<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/issues/25#issue-2207153343/">
+![image (1)](https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/156383201/ba6bf447-5c5e-49a1-b1f9-bbc0738816ee)
 
 
 ## 목차
