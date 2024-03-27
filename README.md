@@ -1,5 +1,9 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=75bdc2&height=120&section=footer&text=느린걸음🏥&fontSize=50&fontColor=13334b"/>
-<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/323f40b0-4830-4c0a-b5f7-9478e0068db7" width="850" height="650" align="center">
+<div align="center">
+<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/323f40b0-4830-4c0a-b5f7-9478e0068db7" width="850" height="650">
+</div>
+<br/>
+<br/>
+<br/>
 
 ## 목차 📄
   [1. 프로젝트 소개](#1-프로젝트-소개)<br>
@@ -13,14 +17,18 @@
   [9. 테스트](#9-테스트)<br>
   [10. 회고](#10-회고)<br>
 
+  <br/>
+
 ## 1. 프로젝트 소개
 SlowStep은 의료 서비스 분야에서 사용되는 웹 기반 플랫폼으로, 대학병원 의사와 요양병원 간호사를 대상으로 합니다. 이 플랫폼은 의료 기관 내에서 환자 정보를 관리하고 의료 서비스를 제공하는 데 필요한 다양한 기능을 제공합니다. 대학병원 의사들과 요양병원 간호사들 SlowStep을 통해 환자의 건강 상태를 모니터링하며 서로 소통하고 환자 치료에 필요한 정보에 빠르게 접근할 수 있습니다.
 
+<br/>
 
 ## 2. 팀원 소개
 |<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/79ecba6a-96ea-4711-a641-90d7a171d415" width="150" height="150"/>|<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/bed37d0a-ab59-47d8-921a-8f2c3aa34ca9" width="150" height="150"/>|<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/facd74e6-cf7a-4803-99b3-bcd3436ad833" width="150" height="150"/>|<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/6fd97fbe-b661-4163-8423-c468c0bbb175" width="150" height="150"/>|<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/613004ee-fe1a-42f3-8976-bc37feab3526" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|:-:|
 |근엽🤔<br/>[@WARDKEY](https://github.com/WARDKEY)|설화😘<br/>[@Noononda](https://github.com/Noononda)|혜경😲<br/>[@BakHyegyeong](https://github.com/BakHyegyeong)|황엽😎<br/>[@jeonghwangyeop](https://github.com/jeonghwangyeop)|광수😄<br/>[@Jrhkdtn](https://github.com/Jrhkdtn)|
+<br/>
 <div>
   근엽🤔 : 요구사항 명세서 작성, 환자관리 기능 구현
 </div>
@@ -36,6 +44,7 @@ SlowStep은 의료 서비스 분야에서 사용되는 웹 기반 플랫폼으�
 <div>
   광수😄 : 인터랙티브 아키텍쳐 작성, 사용자 기능 구현
 </div>
+<br/>
 
 ## 3. 사용 기술
 <div align="center">
@@ -60,6 +69,7 @@ SlowStep은 의료 서비스 분야에서 사용되는 웹 기반 플랫폼으�
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
   <img src="https://img.shields.io/badge/slack-4A154B?style=for-the-badge&logo=slack&logoColor=white">
 </div>
+<br/>
 
 ## 4. 요구사항 명세서
 
@@ -161,3 +171,5 @@ SlowStep은 의료 서비스 분야에서 사용되는 웹 기반 플랫폼으�
 </details>
 
 ## 10. 회고
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=75bdc2&height=120&section=footer&fontSize=50&fontColor=13334b" width="1100" />
