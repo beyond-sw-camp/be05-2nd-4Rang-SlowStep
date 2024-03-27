@@ -25,7 +25,7 @@
 
 ## 4. 요구사항 명세서
 
-<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/437f3fcc-1ad1-4cb7-9035-51545af24a35" alt="요구사항 명세서" style='border-radius: 100px;'>
+<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/069d22f4-ced1-4f2c-8f56-d7e525d51f7f" alt="요구사항 명세서" style='border-radius: 100px;'>
 
 
 
