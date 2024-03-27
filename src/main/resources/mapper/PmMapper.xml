@@ -23,6 +23,9 @@
                 #{pmCn},
                 #{trsmDir},
                 default,
+                default,
+                default,
+                default,
                 default)
     </insert>
 
