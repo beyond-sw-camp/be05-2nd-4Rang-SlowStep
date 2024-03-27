@@ -58,6 +58,11 @@
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/156383201/06a6f4bc-aadd-40af-868c-69e51f07a92b" alt="환자 정보 조회" style='border-radius: 100px;'>
 </details>
 
+<details>
+<summary>표준제안</summary>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/156383201/1b02edb9-2195-4037-9417-b8a0800105dd" alt="환자 정보 조회" style='border-radius: 100px;'>
+</details>
+
 ## 7. 테스트
 <details>
 <summary>공동 환자관리</summary>
