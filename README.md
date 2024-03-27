@@ -84,7 +84,10 @@
 </details>
 
 ## 8. API 명세서
-  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/83454423/90174245-4b11-4f75-87b0-f9861b6e706a" alt="API 명세서" style='border-radius: 50px;'>
+<details>
+<summary>API 명세서</summary>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/66b6b912-41b7-40cf-b367-c4990942c02d" alt="API 명세서" style='border-radius: 50px;'>
+</details>
 
 ## 9. 테스트
 <details>
