@@ -217,5 +217,32 @@
 
 
 ## 10. 회고
+<details>
+  <summary>황엽😎</summary>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/e7c1d274-27e9-42b4-bb9b-ff1e795dedf8">
+</details>
+
+<details>
+  <summary>근엽🤔</summary>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/87612f00-4144-4113-bfcc-394db355715d">
+</details>
+
+<details>
+  <summary>혜경😲</summary>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/c3c84100-3053-444c-ac3d-8f56b947ee77">
+</details>
+
+<details>
+  <summary>광수😄</summary>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/7a51e865-a9b7-4685-acfc-65bc983e42f5">
+</details>
+
+<details>
+  <summary>설화😘</summary>
+<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/137466623/a00f899e-8582-4cee-b0d7-dfc6751a7b50">
+</details>
+
+
+
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=75bdc2&height=120&section=footer&fontSize=50&fontColor=13334b" width="1100" />
