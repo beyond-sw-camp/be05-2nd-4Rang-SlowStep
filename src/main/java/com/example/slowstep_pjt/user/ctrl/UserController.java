@@ -16,6 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 import com.example.slowstep_pjt.user.domain.UserDTO;
+import com.example.slowstep_pjt.user.domain.UserUpdateDTO;
 import com.example.slowstep_pjt.user.service.UserService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -93,12 +94,16 @@ public class UserController {
 
     @PostMapping("/update")
     @Operation(summary = "사용자 정보 업데이트", description = "사용자의 이메일, 전화번호, 비밀번호 등을 업데이트하는 기능")
-    public ResponseEntity<String> updateUserInfo(@Valid @RequestBody UserDTO userDTO, HttpSession session) {
+    public ResponseEntity<String> updateUserInfo(@Valid @RequestBody UserUpdateDTO userUpdateDTO, HttpSession session) {
     // 세션에서 로그인 사용자 정보를 가져옴
     UserDTO loginUser = (UserDTO) session.getAttribute("loginUser");
     if (loginUser == null) {
         return new ResponseEntity<>("사용자가 로그인하지 않았습니다.", HttpStatus.FORBIDDEN);
     }
+    UserDTO userDTO = loginUser;
+    userDTO.setMbrEml(userUpdateDTO.getMbrEml());
+    userDTO.setMbrPwd(userUpdateDTO.getMbrPwd());
+    userDTO.setMbrTelno(userUpdateDTO.getMbrTelno());
     userDTO.setMbrNo(loginUser.getMbrNo());
     System.out.println(userDTO.toString());
     System.out.println("debug >>> "+ loginUser.getMbrNm());
