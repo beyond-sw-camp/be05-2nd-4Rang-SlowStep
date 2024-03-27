@@ -105,7 +105,7 @@
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/ef1e7130-1e6d-44bb-a72b-a97804587107" alt="진료 정보 조회" style='border-radius: 100px;'>
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/5ebdb3c8-ed50-4f23-a097-7c9afb5f308b" alt="진료 정보 등록" style='border-radius: 100px;'>
   <img src="" alt="" style='border-radius: 100px;'>
-  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/83454423/c22d53ce-7269-4c1f-99ad-6380ad661b6d" alt="" style='border-radius: 100px;'>
+  
 </details>
 
 <details>
@@ -116,17 +116,13 @@
 </details>
 
 <details>
-<summary>로그인</summary>
+<summary>계정</summary>
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/114909535/8cb4e0b4-3367-420a-bd97-396a918a82c0" alt="진료 담당의 확인" style='border-radius: 100px;'>
-</details>
 
-<details>
-<summary>로그아웃</summary>
+
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/114909535/eb81f391-730b-47ea-a190-68a95c19e6a6" alt="진료 담당의 확인" style='border-radius: 100px;'>
-</details>
 
-<details>
-<summary>계정 정보 변경</summary>
+
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/114909535/f87545de-1989-4700-9932-03d70ef89484" alt="진료 담당의 확인" style='border-radius: 100px;'>
 </details>
 
