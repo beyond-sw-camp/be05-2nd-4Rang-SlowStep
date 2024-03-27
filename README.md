@@ -184,6 +184,38 @@
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/114909535/f87545de-1989-4700-9932-03d70ef89484" alt="진료 담당의 확인" style='border-radius: 100px;'>
 </details>
 
+<details>
+<summary>쪽지</summary>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/5541f566-abff-40d8-b118-447fff42a4a9" alt="간호사 목록" style='border-radius: 50px;'>
+
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/8b160d7a-fd59-42d5-b42b-478f3aba10cb" alt="의사 목록" style='border-radius: 50px;'>
+
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/8d83df66-579f-4c52-8a5b-97e2fc8d04ac" alt="쪽지 내역 열람1" style='border-radius: 50px;'>
+
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/6ca718b2-64d5-4bb8-9561-7b31aa34b4af" alt="쪽지 내역 열람2" style='border-radius: 50px;'>
+
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/03c30534-419b-41e2-9f24-b794228a0f2f" alt="쪽지 삭제" style='border-radius: 50px;'>
+
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/6cf64b72-8096-49c7-9f04-23b108585979" alt="쪽지 세부 내역(상대가 보낸 쪽지 열람시)" style='border-radius: 50px;'>
+
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/f3aa8862-cb08-443c-bce4-e95e18b86c32" alt="쪽지 세부 내역(상대가 보낸 쪽지 열람 결과)" style='border-radius: 50px;'>
+
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/d7129751-a0da-4f71-b18a-7aa611719425" alt="쪽지 세부 내역(자신이 보낸 쪽지 열람 시)" style='border-radius: 50px;'>
+
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/826ea93b-cf90-4f88-a6e2-0217e35eed7d" alt="쪽지 세부 내역(자신이 보낸 쪽지 열람 결과)" style='border-radius: 50px;'>
+
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/fd4ef4fd-9a98-40b8-a851-0458b947f65e" alt="쪽지 세부 내용 열람(삭제된 쪽지)" style='border-radius: 50px;'>
+
+
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/1dd93fb3-e70c-4e34-9892-97c2c82c90a8" alt="쪽지 작성" style='border-radius: 50px;'>
+
+
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/21a713f3-63a2-41f6-a438-fa1e92ba5e13" alt="쪽지 작성(결과)" style='border-radius: 50px;'>
+
+
+</details>
+
+
 ## 10. 회고
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=75bdc2&height=120&section=footer&fontSize=50&fontColor=13334b" width="1100" />
