@@ -52,7 +52,11 @@
 
 
 ## 6. DB설계와 DB명세서
-
+<details>
+<summary>DB설계서</summary>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/14d7e139-41a4-4c67-9f32-719fae2c794a" alt="환자 정보 조회" style='border-radius: 100px;'>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/14d7e139-41a4-4c67-9f32-719fae2c794a" alt="환자 정보 조회" style='border-radius: 100px;'>
+</details>
 
 ## 7. 테스트
 <details>
