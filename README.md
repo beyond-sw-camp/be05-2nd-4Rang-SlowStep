@@ -7,9 +7,11 @@
   [3. 사용 기술](#3-사용-기술)<br>
   [4. 요구사항 명세서](#4-요구사항-명세서)<br>
   [5. 기능 명세서](#5-기능-명세서)<br>
-  [6. DB설계와 DB명세서](#6-DB설계와DB명세서)<br>
-  [7. 테스트](#7-테스트)<br>
-  [8. 회고](#8-회고)<br>
+  [6. 아키텍쳐](#6-아키텍처)<br>
+  [7. DB설계와 DB명세서](#7-db설계와-db명세서)<br>
+  [8. API 명세서](#8-api-명세서)<br>
+  [9. 테스트](#9-테스트)<br>
+  [10. 회고](#10-회고)<br>
 
 ## 1. 프로젝트 소개
 
@@ -79,7 +81,10 @@
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/156383201/1b02edb9-2195-4037-9417-b8a0800105dd" alt="환자 정보 조회" style='border-radius: 100px;'>
 </details>
 
-## 8. 테스트
+## 8. API 명세서
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/83454423/90174245-4b11-4f75-87b0-f9861b6e706a" alt="API 명세서" style='border-radius: 50px;'>
+
+## 9. 테스트
 <details>
 <summary>공동 환자관리</summary>
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/14d7e139-41a4-4c67-9f32-719fae2c794a" alt="환자 정보 조회" style='border-radius: 100px;'>
@@ -134,4 +139,4 @@
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/114909535/f87545de-1989-4700-9932-03d70ef89484" alt="진료 담당의 확인" style='border-radius: 100px;'>
 </details>
 
-## 9. 회고
+## 10. 회고
