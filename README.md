@@ -75,7 +75,8 @@ SlowStep은 의료 서비스 분야에서 사용되는 웹 기반 플랫폼으�
 
 <details>
 <summary>요구사항 명세서</summary>
-  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/f08c882b-abd9-4384-8978-2c9813b993fc" alt="요구사항 명세서" style='border-radius: 100px;'>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/7f4d3e6e-1c13-4400-a74c-a52ca455b0a2" alt="요구사항 명세서" style='border-radius: 100px;'>
+
 </details>
 
 
