@@ -60,16 +60,22 @@
   <br>
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/2708c268-c914-4a29-a2e0-41678a8fc3be" alt="복용 약물 조회" style='border-radius: 100px;'>
   <br>
-  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/3a49fa8a-8650-4941-bff6-f8e6ebd9be6b" alt="환자 건강 정보 확인" style='border-radius: 100px;'>
-  <br>
-  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/b97aca3c-9297-4893-94d6-a222fcb7f5a7" alt="환자 진료 차트 확인" style='border-radius: 100px;'>
-  <br>
-  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/aa3599e6-82fa-457a-90f3-90d23a041dc6" alt="환자 진료 정보 확인" style='border-radius: 100px;'>
-  <br>
-  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/e1b6740e-95a9-4ba0-aec7-be9ee49ad96a" alt="환자 질병 이력 조회" style='border-radius: 100px;'>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/fc4876a3-cd20-4a2b-a6a4-f054e695ffac" alt="환자 건강 정보 확인" style='border-radius: 100px;'>
 
   <br>
-<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/0d28fb04-6a99-477e-ae78-5ad2231a1ce4" alt="환자 건강 정보 등록" style='border-radius: 100px;'>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/becad26a-3582-4cbf-943c-0c30a0f3f317" alt="환자 진료 차트 확인" style='border-radius: 100px;'>
+
+  <br>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/e61c8840-a4cc-4c9d-9356-260057acffcd" alt="환자 진료 정보 확인" style='border-radius: 100px;'>
+
+  <br>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/2f795fa0-f173-429f-b50f-f64fedd83f2a" alt="환자 질병 이력 조회" style='border-radius: 100px;'>
+  
+
+
+  <br>
+<img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/7802fb07-55db-4403-866d-0f68f884f51f" alt="환자 건강 정보 등록" style='border-radius: 100px;'>
+
 
 <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/83454423/4c7d6895-97fa-4561-802b-a72a722483fe" alt="" style='border-radius: 100px;'>
   
@@ -86,7 +92,8 @@
 
 <details>
 <summary>간호사 환자관리</summary>
-  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/61ffce78-7dbc-4f93-8406-2d601c80cd51" alt="진료 담당의 확인" style='border-radius: 100px;'>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/8fc8f8bb-0006-40dc-bc7a-3158a349c948" alt="진료 담당의 확인" style='border-radius: 100px;'>
+
 
 </details>
 
