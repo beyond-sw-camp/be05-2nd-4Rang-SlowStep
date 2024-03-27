@@ -61,7 +61,7 @@
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/156383201/16238c24-7593-4697-b41d-9f9c8be5f678" alt="환자 정보 조회" style='border-radius: 100px;'>
 </details>
 <details>
-<summary>ERD</summary>
+<summary>클래스 다이어그램램</summary>
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/156383201/e988629d-e6c3-42bd-b9d5-cad21bf9f1a6" alt="환자 정보 조회" style='border-radius: 100px;'>
 </details>
 
