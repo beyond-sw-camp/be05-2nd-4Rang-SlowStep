@@ -145,7 +145,7 @@
 ## 9. 테스트
 <details>
 <summary>공동 환자관리</summary>
-  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/14d7e139-41a4-4c67-9f32-719fae2c794a" alt="환자 정보 조회" style='border-radius: 100px;'>
+  <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/55c33e81-b778-45c6-bd18-711e8dafa889" alt="환자 정보 조회" style='border-radius: 100px;'>
   <br>
   <img src="https://github.com/beyond-sw-camp/be05-2nd-4Rang-SlowStep/assets/132131921/2708c268-c914-4a29-a2e0-41678a8fc3be" alt="복용 약물 조회" style='border-radius: 100px;'>
   <br>
