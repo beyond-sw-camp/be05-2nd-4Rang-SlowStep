@@ -72,11 +72,11 @@ public class MPAllService {
         return mpAllMapper.getPtInfo(ptNo);
     }
 
-    public List<AD_DRUG_INFO_DTO> getDrugInfo(){
+    public List<AD_DRUG_INFO_DTO> getDrugInfo(Integer ptHthInfoNo){
 
         System.out.println("debug >> Service getDrugInfo()");
 
-        return mpAllMapper.getDrugInfo();
+        return mpAllMapper.getDrugInfo(ptHthInfoNo);
     }
 
     public void postDrugInfo(AD_DRUG_INFO_DTO drugData){

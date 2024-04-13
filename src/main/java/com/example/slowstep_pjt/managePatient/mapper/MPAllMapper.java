@@ -28,7 +28,7 @@ public interface MPAllMapper {
 
     public List<PT_DTO> getPtInfo(Integer ptNo);
 
-    public List<AD_DRUG_INFO_DTO> getDrugInfo();
+    public List<AD_DRUG_INFO_DTO> getDrugInfo(Integer ptHthInfoNo);
 
     public void postDrugInfo(AD_DRUG_INFO_DTO drugData);
 
