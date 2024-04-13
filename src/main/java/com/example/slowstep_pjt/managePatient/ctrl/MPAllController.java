@@ -13,21 +13,23 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/all")
 @Tag(name = "Manage Patient Doctor Nurse", description = "의사 간호사 환자 관리 기능")
 public class MPAllController {
@@ -93,13 +95,13 @@ public class MPAllController {
         return new ResponseEntity<>(mpAllService.getPtInfo(ptNo), HttpStatus.OK);
     }
 
-    @GetMapping("/ad_drug_info")
+    @GetMapping("/ad_drug_info/{ptHthInfoNo}")
     @Operation(summary = "복용 약물 조회", description = "의사, 간호사가 환자의 복용 약물을 조회하는 API")
-    public ResponseEntity<List<AD_DRUG_INFO_DTO>> getDrugInfo() {
+    public ResponseEntity<List<AD_DRUG_INFO_DTO>> getDrugInfo(@PathVariable("ptHthInfoNo") Integer ptHthInfoNo) {
 
         System.out.println("debug >> AllController getPtInfo");
 
-        return new ResponseEntity<>(mpAllService.getDrugInfo(), HttpStatus.OK);
+        return new ResponseEntity<>(mpAllService.getDrugInfo(ptHthInfoNo), HttpStatus.OK);
     }
 
     @PostMapping("/post_ad_drug_info")

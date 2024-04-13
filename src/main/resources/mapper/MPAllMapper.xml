@@ -65,10 +65,12 @@
 
 
     <select id="getDrugInfo"
+            parameterType="java.lang.Integer"
             resultType="com.example.slowstep_pjt.managePatient.domain.AD_DRUG_INFO_DTO">
 
         SELECT drug_nm, drug_ad_freq
         FROM AD_DRUG_INFO
+        WHERE PT_HTH_INFO_NO = #{ptHthInfoNo}
 
     </select>
 
